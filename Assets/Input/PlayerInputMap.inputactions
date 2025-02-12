@@ -30,7 +30,7 @@
                     "id": "007d46f3-fe70-4a19-8863-93d563d105d8",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(y=-1)",
+                    "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Look",
                     "isComposite": false,
