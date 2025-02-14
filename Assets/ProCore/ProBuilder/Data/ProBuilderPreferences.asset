@@ -25,19 +25,23 @@ MonoBehaviour:
   - pbDefaultEntity
   - pbDefaultCollider
   - pbShadowCastingMode
+  - pb_Log::m_LogLevel
+  - pb_Log::m_Output
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
-  m_String_keys: []
+  m_String_keys:
+  - pb_Log::m_LogFilePath
   m_Color_keys: []
   m_Material_keys:
   - pbDefaultMaterial
   m_Bool_values: 01000000
-  m_Int_values: 00000000010000000100000001000000000000000200000002000000
+  m_Int_values: 00000000010000000100000001000000000000000200000002000000fc00000003000000
   m_Float_values:
   - 0
   - 0
-  m_String_values: []
+  m_String_values:
+  - Logs/ProBuilderLog.txt
   m_Color_values: []
   m_Material_values:
   - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}

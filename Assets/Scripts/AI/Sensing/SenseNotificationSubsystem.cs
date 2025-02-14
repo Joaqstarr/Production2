@@ -29,7 +29,17 @@ namespace AI.Sensing
         
         public static NotificationDelegate OnNotification;
 
+        public static void TriggerSightNotifcation(Vector3 location)
+        {
+            SenseNotificationContext context = new SenseNotificationContext
+            {
+                Type = SenseNotificationContext.NotificationType.Sight,
+                Position = location,
+            };
+            OnNotification?.Invoke(context);
 
+        }
+        
         public static void TriggerSoundNotification(Vector3 location, float volumeRange)
         {
             SenseNotificationContext context = new SenseNotificationContext
