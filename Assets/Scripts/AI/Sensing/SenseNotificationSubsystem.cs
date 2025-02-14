@@ -8,7 +8,8 @@ namespace AI.Sensing
         {
             None,
             Sound,
-            Sight
+            Sight,
+            Alarm
         }
         
         public NotificationType Type;
@@ -49,6 +50,16 @@ namespace AI.Sensing
                 Strength = volumeRange
             };
             
+            OnNotification?.Invoke(context);
+        }
+
+        public static void TriggerAlarmNotification(Vector3 location, float strength)
+        {
+            SenseNotificationContext context = new SenseNotificationContext
+            {
+                Type = SenseNotificationContext.NotificationType.Alarm,
+                Position = location,
+            };
             OnNotification?.Invoke(context);
         }
     }
