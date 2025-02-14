@@ -53,7 +53,7 @@ namespace AI.Sensing
             OnNotification?.Invoke(context);
         }
 
-        public static void TriggerAlarmNotification(Vector3 location, float strength)
+        public static void TriggerAlarmNotification(Vector3 location)
         {
             SenseNotificationContext context = new SenseNotificationContext
             {

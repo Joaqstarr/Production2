@@ -15,7 +15,8 @@ namespace AI.Drone.States
 
         private void OnSightReceived(SenseNotificationContext notification)
         {
-            _drone.Agent.SetDestination(notification.Position);
+            //_drone.Agent.SetDestination(notification.Position);
+            SenseNotificationSubsystem.TriggerAlarmNotification(notification.Position);
         }
 
         
