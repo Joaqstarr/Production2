@@ -12,12 +12,10 @@ namespace AI.Drone
         public DroneStateMachineManager(DroneBrain brain) : base(brain)
         {
             _searchState = new SearchState(brain, this);
+            SwitchToSearchState();
+
         }
 
-        protected override void OnEnterState()
-        {
-            SwitchToSearchState();
-        }
 
 
         public void SwitchToSearchState()

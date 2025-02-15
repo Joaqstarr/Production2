@@ -9,6 +9,9 @@ namespace AI.Drone
     {
         private DroneStateMachineManager _droneStateMachine;
 
+        [field: SerializeField]
+        public Transform[] PatrolPoints { get; private set; } // Assign patrol points in the Inspector
+
         public NavMeshAgent Agent { get; private set; }
         private void Awake()
         {
@@ -32,5 +35,13 @@ namespace AI.Drone
             }
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            for (int i = 0; i < PatrolPoints.Length; i++)
+            {
+                Gizmos.DrawWireSphere(PatrolPoints[i].position, 0.6f);
+            }
+        }
     }
 }

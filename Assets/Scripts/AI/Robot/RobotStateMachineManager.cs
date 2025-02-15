@@ -16,7 +16,6 @@ namespace AI.Robot
         {
             IdleState = new IdleState(robotBrain, this);
             FollowState = new FollowState(robotBrain, this);
-            
             SwitchToIdleState();
         }
 
