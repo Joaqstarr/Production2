@@ -10,4 +10,4 @@ namespace AI.Sensing.Debug
             SenseNotificationSubsystem.TriggerSightNotifcation(transform.position);
         }
     }
-}
+}   
