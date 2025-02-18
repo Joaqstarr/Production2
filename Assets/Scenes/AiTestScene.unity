@@ -1142,6 +1142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 467606585}
   - component: {fileID: 467606584}
+  - component: {fileID: 467606586}
+  - component: {fileID: 467606587}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -1187,6 +1189,36 @@ Transform:
   - {fileID: 884631974}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467606586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467606583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadc241ce1a23134ca4ff365783153eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &467606587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467606583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecff47370c74f39b1f0a2f0eb18f528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &508585228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4489516514540239982, guid: cb07a7ffc8074654680f7b91ef49a0e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 987075224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832938345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1716,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1509455102}
+    - targetCorrespondingSourceObject: {fileID: 1237069183931598896, guid: cb07a7ffc8074654680f7b91ef49a0e9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1509455103}
   m_SourcePrefab: {fileID: 100100000, guid: cb07a7ffc8074654680f7b91ef49a0e9, type: 3}
 --- !u!1 &1033283278
 GameObject:
@@ -3202,6 +3238,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecff47370c74f39b1f0a2f0eb18f528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1509455103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509455094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcc0d003e3c7904c8c9aaf3163d4824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lookTransform: {fileID: 508585228}
+  _laserHitMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1581487345
 GameObject:
   m_ObjectHideFlags: 0
