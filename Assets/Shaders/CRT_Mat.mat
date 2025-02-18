@@ -38,8 +38,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blur_Offset: 0
-    - _Scanlines_Speed: 0.25
+    - _Blur_Offset: 0.002
+    - _Pixel_Size: 16
+    - _Scanlines_Speed: 0.005
     m_Colors:
-    - _Bloom: {r: 1, g: 1, b: 1, a: 0}
+    - _Bloom: {r: 23.96863, g: 23.96863, b: 23.96863, a: 0}
   m_BuildTextureStacks: []
