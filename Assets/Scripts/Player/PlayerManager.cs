@@ -40,6 +40,9 @@ namespace Player
 
         private bool _isSprinting = false;
         private bool _isCrouching = false;
+        private float _coyoteTimeCounter;
+        private float _jumpBufferCounter;
+
         private float _targetHeight;
         private float _initialCameraY;
         private float _targetCameraY;
@@ -165,12 +168,27 @@ namespace Player
 
             if (_isGrounded)
             {
-                _currentGravity = -2f;
+                _coyoteTimeCounter = jumpSettings.coyoteTime;
+            }
+            else
+            {
+                _coyoteTimeCounter -= Time.deltaTime;
+            }
 
-                if (Keyboard.current.spaceKey.wasPressedThisFrame)
-                {
-                    _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity);
-                }
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                _jumpBufferCounter = jumpSettings.jumpBufferTime;
+            }
+            else
+            {
+                _jumpBufferCounter -= Time.deltaTime;
+            }
+
+            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+            {
+                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity) * jumpSettings.jumpSpeedMultiplier;
+
+                _jumpBufferCounter = 0f;
             }
             else
             {

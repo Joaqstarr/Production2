@@ -6,7 +6,10 @@ using UnityEngine;
 public class JumpSettings : ScriptableObject
 {
     [Header("Jump Settings")]
-    public float jumpHeight = 1f;
-    public float fallMultiplier = 2.5f;
+    public float jumpHeight = 2f;
+    public float fallMultiplier = 2f;  
     public float lowJumpMultiplier = 2f;
+    public float jumpSpeedMultiplier = 0.75f;
+    public float coyoteTime = 0.2f;  
+    public float jumpBufferTime = 0.2f;
 }
