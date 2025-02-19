@@ -9,7 +9,8 @@ namespace AI.Sensing
             None,
             Sound,
             Sight,
-            Alarm
+            Alarm,
+            Laser
         }
         
         public NotificationType Type;
@@ -58,6 +59,17 @@ namespace AI.Sensing
             SenseNotificationContext context = new SenseNotificationContext
             {
                 Type = SenseNotificationContext.NotificationType.Alarm,
+                Position = location,
+            };
+            OnNotification?.Invoke(context);
+        }
+
+
+        public static void TriggerLaserNotification(Vector3 location)
+        {
+            SenseNotificationContext context = new SenseNotificationContext
+            {
+                Type = SenseNotificationContext.NotificationType.Laser,
                 Position = location,
             };
             OnNotification?.Invoke(context);
