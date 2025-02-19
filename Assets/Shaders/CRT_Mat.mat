@@ -42,5 +42,5 @@ Material:
     - _Pixel_Size: 16
     - _Scanlines_Speed: 0.005
     m_Colors:
-    - _Bloom: {r: 2.9960787, g: 2.9960787, b: 2.9960787, a: 0}
+    - _Bloom: {r: 1.0592736, g: 1.0592736, b: 1.0592736, a: 0}
   m_BuildTextureStacks: []
