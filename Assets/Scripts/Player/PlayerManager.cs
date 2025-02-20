@@ -31,7 +31,7 @@ namespace Player
 
         private bool _isGrounded;
 
-        [SerializeField] private CustomPassVolume sprintEffectPass;
+        [SerializeField] private GameObject sprintEffectObject;
         [SerializeField] private Volume globalVolume;
         private Vignette _vignette;
 
@@ -160,9 +160,9 @@ namespace Player
             float targetFOV = _isSprinting ? sprintSettings.sprintFOV : sprintSettings.normalFOV;
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * sprintSettings.zoomSpeed);
 
-            if (sprintEffectPass != null && _isSprinting != wasSprinting) 
+            if (sprintEffectObject != null)
             {
-                sprintEffectPass.enabled = _isSprinting;
+                sprintEffectObject.SetActive(_isSprinting);
             }
         }
 
