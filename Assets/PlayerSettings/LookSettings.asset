@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce27f7601adb3d4b994bbe535389c38, type: 3}
   m_Name: LookSettings
   m_EditorClassIdentifier: 
-  lookSensitivity: {x: 0.7, y: 0.7}
+  lookSensitivity: {x: 0.4, y: 0.4}
   minMaxVerticalLook: {x: -75, y: 75}
