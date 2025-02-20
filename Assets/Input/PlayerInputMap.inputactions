@@ -24,7 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-<<<<<<< Updated upstream
                     "name": "Laser",
                     "type": "Value",
                     "id": "48458ed1-fb74-4551-af9c-eaf16a908a6f",
@@ -32,33 +31,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-=======
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "7110091d-1a24-4d38-b2cd-f5e565726323",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Sprint",
-                    "type": "Button",
-                    "id": "b5f3ea2b-9451-4fd1-8695-6c4e487832b4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "5708f501-03bf-40b9-b240-9a14f6aa3da4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
->>>>>>> Stashed changes
                 }
             ],
             "bindings": [
@@ -152,52 +124,23 @@
                 },
                 {
                     "name": "",
-<<<<<<< Updated upstream
                     "id": "747c2aed-00fb-4025-bc0d-18d1f26ca332",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Laser",
-=======
-                    "id": "e2cbe841-dffe-44a6-a3a9-c957f70070d2",
-                    "path": "<Keyboard>/c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
->>>>>>> Stashed changes
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-<<<<<<< Updated upstream
                     "id": "27d8c9e7-f309-4458-9561-6622ff6ad6c5",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Laser",
-=======
-                    "id": "0da6fc47-6d77-4fac-80e9-ec2c8f344694",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c9f1b948-207a-4092-adaf-36004b62a857",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
->>>>>>> Stashed changes
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
