@@ -31,6 +31,7 @@ namespace Player
 
         private bool _isGrounded;
 
+        [SerializeField] private CustomPassVolume sprintEffectPass;
         [SerializeField] private Volume globalVolume;
         private Vignette _vignette;
 
@@ -153,10 +154,16 @@ namespace Player
 
         private void HandleSprinting()
         {
-            _isSprinting = Keyboard.current.leftShiftKey.isPressed && _movementInput != Vector2.zero && !_isCrouching; 
+            bool wasSprinting = _isSprinting;
+            _isSprinting = Keyboard.current.leftShiftKey.isPressed && _movementInput != Vector2.zero && !_isCrouching;
 
             float targetFOV = _isSprinting ? sprintSettings.sprintFOV : sprintSettings.normalFOV;
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * sprintSettings.zoomSpeed);
+
+            if (sprintEffectPass != null && _isSprinting != wasSprinting) 
+            {
+                sprintEffectPass.enabled = _isSprinting;
+            }
         }
 
         //Note to self: Jump does not work when on object edge due to raycast. Find alternative method
