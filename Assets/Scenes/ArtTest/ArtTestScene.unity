@@ -350,6 +350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6206035915273075514, guid: cb07a7ffc8074654680f7b91ef49a0e9,
+        type: 3}
+      propertyPath: m_Lens.NearClipPlane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6928563245779050992, guid: cb07a7ffc8074654680f7b91ef49a0e9,
         type: 3}
       propertyPath: _moveSpeed
@@ -418,7 +423,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1856766221}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1237069183931598896, guid: cb07a7ffc8074654680f7b91ef49a0e9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1887766832}
   m_SourcePrefab: {fileID: 100100000, guid: cb07a7ffc8074654680f7b91ef49a0e9, type: 3}
 --- !u!1 &177603082
 GameObject:
@@ -821,7 +830,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 10000
   field of view: 60.000004
   orthographic: 0
@@ -2927,12 +2936,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1887766824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1237069183931598896, guid: cb07a7ffc8074654680f7b91ef49a0e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 147835213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1887766831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8104514281369834410, guid: cb07a7ffc8074654680f7b91ef49a0e9,
     type: 3}
   m_PrefabInstance: {fileID: 147835213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1887766832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887766824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac55bb9a1f89e444ba14873ef6956b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionSpeed: 5
 --- !u!1001 &1974422689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2954,7 +2982,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 18425dc4d5af97f45959b37e221aaaac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.126
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18425dc4d5af97f45959b37e221aaaac,
         type: 3}
