@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CrouchSettings
   m_EditorClassIdentifier: 
   crouchSpeed: 2.5
-  crouchHeight: 1
-  standingHeight: 2
+  crouchHeight: 1.256
+  standingHeight: 1.256
   crouchTransitionSpeed: 10
+  cameraCrouchOffset: 0.35

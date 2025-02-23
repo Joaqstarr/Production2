@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81820745cde21834ab5bc1cdc19365ce
+guid: 5f5e0c163da4193488a97b35829183ac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Piper_WalkForward
-      takeName: Piper_WalkForward
-      internalID: -1716189289532683105
+      name: Piper_WalkLeft_crouch
+      takeName: Piper_WalkLeft_crouch
+      internalID: -4165887303128898751
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0

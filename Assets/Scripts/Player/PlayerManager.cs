@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.HighDefinition;
@@ -12,20 +13,23 @@ namespace Player
         private PlayerControls _playerControls;
         private CharacterController _characterController;
 
-        [Header("Scriptable Object Settings")]
-        [SerializeField] private MovementSettings movementSettings;
+        [Header("Scriptable Object Settings")] [SerializeField]
+        private MovementSettings movementSettings;
+
         [SerializeField] private LookSettings lookSettings;
         [SerializeField] private GravitySettings gravitySettings;
         [SerializeField] private CrouchSettings crouchSettings;
         [SerializeField] private SprintSettings sprintSettings;
         [SerializeField] private JumpSettings jumpSettings;
 
-        [Header("Camera Setup")]
-        [SerializeField] private Transform cameraTransform;
-        [SerializeField] private Camera playerCamera;
+        [Header("Camera Setup")] [SerializeField]
+        private Transform cameraTransform;
 
-        [Header("Ground Check")]
-        [SerializeField] private Transform groundCheckPoint;
+        [SerializeField] private CinemachineVirtualCamera playerCamera;
+
+        [Header("Ground Check")] [SerializeField]
+        private Transform groundCheckPoint;
+
         [SerializeField] private float groundCheckDistance = 0.3f;
         [SerializeField] private LayerMask groundLayer;
 
@@ -55,7 +59,7 @@ namespace Player
             Cursor.lockState = CursorLockMode.Locked;
 
             _initialCameraY = cameraTransform.localPosition.y;
-            _targetCameraY = _initialCameraY; 
+            _targetCameraY = _initialCameraY;
 
             _targetHeight = crouchSettings.standingHeight;
 
@@ -76,7 +80,7 @@ namespace Player
                 HandleMovement();
                 HandleLook();
                 HandleCrouching();
-                HandleSprinting();                
+                HandleSprinting();
             }
         }
 
@@ -114,7 +118,8 @@ namespace Player
 
             if (newRotation > 180f) newRotation -= 360f;
 
-            newRotation = Mathf.Clamp(newRotation, lookSettings.minMaxVerticalLook.x, lookSettings.minMaxVerticalLook.y);
+            newRotation = Mathf.Clamp(newRotation, lookSettings.minMaxVerticalLook.x,
+                lookSettings.minMaxVerticalLook.y);
 
             cameraTransform.localRotation = Quaternion.Euler(newRotation, 0f, 0f);
         }
@@ -137,10 +142,12 @@ namespace Player
             }
 
             float currentHeight = _characterController.height;
-            _characterController.height = Mathf.Lerp(currentHeight, _targetHeight, Time.deltaTime * crouchSettings.crouchTransitionSpeed);
+            _characterController.height = Mathf.Lerp(currentHeight, _targetHeight,
+                Time.deltaTime * crouchSettings.crouchTransitionSpeed);
 
             Vector3 cameraPosition = cameraTransform.localPosition;
-            cameraPosition.y = Mathf.Lerp(cameraPosition.y, _targetCameraY, Time.deltaTime * crouchSettings.crouchTransitionSpeed);
+            cameraPosition.y = Mathf.Lerp(cameraPosition.y, _targetCameraY,
+                Time.deltaTime * crouchSettings.crouchTransitionSpeed);
             cameraTransform.localPosition = cameraPosition;
 
 
@@ -148,7 +155,8 @@ namespace Player
             if (_vignette != null)
             {
                 float targetVignetteIntensity = _isCrouching ? 0.25f : 0f;
-                _vignette.intensity.value = Mathf.Lerp(_vignette.intensity.value, targetVignetteIntensity, Time.deltaTime * 5f);
+                _vignette.intensity.value =
+                    Mathf.Lerp(_vignette.intensity.value, targetVignetteIntensity, Time.deltaTime * 5f);
             }
         }
 
@@ -158,7 +166,8 @@ namespace Player
             _isSprinting = Keyboard.current.leftShiftKey.isPressed && _movementInput != Vector2.zero && !_isCrouching;
 
             float targetFOV = _isSprinting ? sprintSettings.sprintFOV : sprintSettings.normalFOV;
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * sprintSettings.zoomSpeed);
+            playerCamera.m_Lens.FieldOfView = Mathf.Lerp(playerCamera.m_Lens.FieldOfView, targetFOV,
+                Time.deltaTime * sprintSettings.zoomSpeed);
 
             if (sprintEffectObject != null)
             {
@@ -193,7 +202,8 @@ namespace Player
 
             if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
             {
-                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity) * jumpSettings.jumpSpeedMultiplier;
+                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity) *
+                                  jumpSettings.jumpSpeedMultiplier;
 
                 _jumpBufferCounter = 0f;
             }
@@ -205,11 +215,23 @@ namespace Player
                 }
                 else if (_currentGravity > 0 && !Keyboard.current.spaceKey.isPressed)
                 {
-                    _currentGravity += (gravitySettings.gravity * (jumpSettings.lowJumpMultiplier - 1)) * Time.deltaTime;
+                    _currentGravity += (gravitySettings.gravity * (jumpSettings.lowJumpMultiplier - 1)) *
+                                       Time.deltaTime;
                 }
 
                 _currentGravity += gravitySettings.gravity * Time.deltaTime;
             }
+        }
+
+
+        public bool IsCrouching()
+        {
+            return _isCrouching;
+        }
+
+        public float GetCrouchTransitionSpeed()
+        {
+            return crouchSettings.crouchTransitionSpeed;
         }
     }
 }
