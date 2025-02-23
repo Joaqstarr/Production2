@@ -16,6 +16,7 @@ namespace Player.Animation
         private Animator _animator;
         private CharacterController _characterController;
         private PlayerManager _playerManager;
+        private PlayerControls _controls;
         
         [SerializeField] private float _transitionSpeed = 5;
 
@@ -25,8 +26,9 @@ namespace Player.Animation
         private void Start()
         {
             _characterController = GetComponent<CharacterController>();
-            _animator = GetComponentInChildren<Animator>();
+            _animator = GetComponent<Animator>();
             _playerManager = GetComponent<PlayerManager>();
+            _controls = GetComponent<PlayerControls>();
             _crouchTransitionSpeed = _playerManager.GetCrouchTransitionSpeed();
         }
 
@@ -72,18 +74,18 @@ namespace Player.Animation
 
         private void HandleLocomotion()
         {
-            Vector3 vel = _characterController.velocity;
+            Vector3 vel = _controls.MovementInput;
 
 
             float oldForwardSpeed = _animator.GetFloat(ForwardSpeedProperty);
             float oldRightSpeed = _animator.GetFloat(RightSpeedProperty);
 
 
-            float newForwardSpeed = Vector3.Dot(transform.forward, vel);
-            float newRightSpeed = Vector3.Dot(transform.right, vel);
+           // float newForwardSpeed = Vector3.Dot(transform.forward, vel);
+            //float newRightSpeed = Vector3.Dot(transform.right, vel);
 
-            float forwardSpeed = Mathf.Lerp(oldForwardSpeed, newForwardSpeed, Time.deltaTime * _transitionSpeed);
-            float rightSpeed = Mathf.Lerp(oldRightSpeed, newRightSpeed, Time.deltaTime * _transitionSpeed);
+            float forwardSpeed = Mathf.Lerp(oldForwardSpeed, vel.y, Time.deltaTime * _transitionSpeed);
+            float rightSpeed = Mathf.Lerp(oldRightSpeed, vel.x, Time.deltaTime * _transitionSpeed);
 
             if (Mathf.Abs(forwardSpeed) < 0.1)
             {
