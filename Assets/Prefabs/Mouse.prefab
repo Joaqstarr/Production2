@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8097146946207054403}
   - component: {fileID: 703280531174873370}
   - component: {fileID: 8476662062433919460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 3462638257914272303}
   - component: {fileID: 5598619322662206251}
   - component: {fileID: 1949217658037634844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4443513559948450500}
   - component: {fileID: 5308576336833562626}
   - component: {fileID: 8540885485796124818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1319654109430026343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyRotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6542106915699071148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Roll-e
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 7247880769547040125}
   - component: {fileID: 989761143454896293}
   - component: {fileID: 9145763617886701665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

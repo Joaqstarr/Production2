@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5778029950189064461}
   - component: {fileID: 1961443674822077312}
   - component: {fileID: 7046760236488406036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThrusterFireAlt2
+      objectReference: {fileID: 0}
+    - target: {fileID: 160983887977005753, guid: de35440321e67404e9b51ae8eb7cf502,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2174415954048723259, guid: de35440321e67404e9b51ae8eb7cf502,
         type: 3}
@@ -225,6 +230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlyingDrone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75b07366eeac6c845827276648546c09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
