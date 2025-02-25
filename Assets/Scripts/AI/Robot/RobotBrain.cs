@@ -15,5 +15,22 @@ namespace AI.Robot
             Agent = GetComponent<NavMeshAgent>();
             RobotStateMachine = new RobotStateMachineManager(this);
         }
+
+
+        private void OnEnable()
+        {
+            CatchCutscene.OnCaughtCutscneTriggered += OnCaughtCutscneTriggered;
+        }
+
+        private void OnDisable()
+        {
+            CatchCutscene.OnCaughtCutscneTriggered -= OnCaughtCutscneTriggered;
+
+        }
+
+        private void OnCaughtCutscneTriggered(Transform player)
+        {
+            Agent.enabled = false;
+        }
     }
 }
