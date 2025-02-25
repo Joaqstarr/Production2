@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3e7d92fd9ff71b43bd9a6da187fe2b1
+guid: 944a1516a1a7935499ad672ff1cdfdb8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Piper_WalkLeft
-      takeName: Piper_WalkLeft
-      internalID: -778218972144282327
+      name: Piper_HandClickLaser
+      takeName: Piper_HandClickLaser
+      internalID: -7971455887263220825
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 9
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -54,11 +54,11 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 00000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000
       curves: []
       events: []
       transformMask: []
-      maskType: 3
+      maskType: 1
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     isReadable: 0
