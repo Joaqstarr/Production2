@@ -7,7 +7,10 @@ namespace AI.Sensing.Debug
     {
         private void Update()
         {
-            SenseNotificationSubsystem.TriggerSightNotifcation(transform.position);
+            if (transform != null)
+            {
+                SenseNotificationSubsystem.TriggerSightNotifcation(transform.position);
+            }
         }
     }
 }   
