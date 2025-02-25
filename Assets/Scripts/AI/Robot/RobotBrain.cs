@@ -16,6 +16,10 @@ namespace AI.Robot
             RobotStateMachine = new RobotStateMachineManager(this);
         }
 
+        ~RobotBrain()
+        {
+            RobotStateMachine = null;
+        }
 
         private void OnEnable()
         {
@@ -28,9 +32,13 @@ namespace AI.Robot
 
         }
 
+
         private void OnCaughtCutscneTriggered(Transform player)
         {
+
+            Agent.isStopped = true;
             Agent.enabled = false;
+            enabled = false;
         }
     }
 }

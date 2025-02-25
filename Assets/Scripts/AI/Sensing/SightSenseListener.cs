@@ -17,6 +17,8 @@ namespace AI.Sensing
 
         protected override bool IsNotificationInRange(SenseNotificationContext notification)
         {
+            if (_transform == null) return false;
+
             if (Vector3.Distance(_transform.position, notification.Position) > _sightRange) return false;
             
             RaycastHit hit;
