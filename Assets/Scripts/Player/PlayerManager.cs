@@ -45,8 +45,6 @@ namespace Player
 
         private bool _isSprinting = false;
         private bool _isCrouching = false;
-        private float _coyoteTimeCounter;
-        private float _jumpBufferCounter;
 
         private float _targetHeight;
         private float _initialCameraY;
@@ -88,11 +86,9 @@ namespace Player
         {
             Vector3 forwardMove = transform.forward * _movementInput.y;
             Vector3 rightMove = transform.right * _movementInput.x;
-
             Vector3 movementDir = (forwardMove + rightMove).normalized;
 
             _currentGravity += gravitySettings.gravity * Time.deltaTime;
-
             movementDir.y = _currentGravity;
 
             float speed = movementSettings.walkSpeed;
@@ -175,51 +171,21 @@ namespace Player
             }
         }
 
-        //Note to self: Jump does not work when on object edge due to raycast. Find alternative method
+
         private void HandleJumping()
         {
             Debug.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance, Color.red);
 
             _isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, groundCheckDistance, groundLayer);
 
-            if (_isGrounded)
+            if (_isGrounded && _currentGravity < 0)
             {
-                _coyoteTimeCounter = jumpSettings.coyoteTime;
-            }
-            else
-            {
-                _coyoteTimeCounter -= Time.deltaTime;
+                _currentGravity = -2f;
             }
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame && _isGrounded)
             {
-                _jumpBufferCounter = jumpSettings.jumpBufferTime;
-            }
-            else
-            {
-                _jumpBufferCounter -= Time.deltaTime;
-            }
-
-            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
-            {
-                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity) *
-                                  jumpSettings.jumpSpeedMultiplier;
-
-                _jumpBufferCounter = 0f;
-            }
-            else
-            {
-                if (_currentGravity < 0)
-                {
-                    _currentGravity += (gravitySettings.gravity * (jumpSettings.fallMultiplier - 1)) * Time.deltaTime;
-                }
-                else if (_currentGravity > 0 && !Keyboard.current.spaceKey.isPressed)
-                {
-                    _currentGravity += (gravitySettings.gravity * (jumpSettings.lowJumpMultiplier - 1)) *
-                                       Time.deltaTime;
-                }
-
-                _currentGravity += gravitySettings.gravity * Time.deltaTime;
+                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity);
             }
         }
 
