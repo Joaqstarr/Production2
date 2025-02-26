@@ -68,13 +68,13 @@ namespace Player.LaserPointer
         {
             if (_controls.IsLaserOn)
             {
-                RaycastHit hit;
+                /*RaycastHit hit;
 
                 if (Physics.Raycast(_lookTransform.position, _lookTransform.forward, out hit, 100, _laserHitMask))
                 {
                     SenseNotificationSubsystem.TriggerLaserNotification(hit.point);
                     Debug.DrawLine(_lookTransform.position + _lookTransform.right, hit.point, Color.red);
-                }
+                }*/
             }
         }
     }

@@ -351,6 +351,57 @@ Transform:
   - {fileID: 4130289075185241628}
   m_Father: {fileID: 5802512454383685906}
   m_LocalEulerAnglesHint: {x: 24.0567, y: -140.40662, z: -60.570496}
+--- !u!1 &830326364114096716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2755261879220611107}
+  - component: {fileID: 5877826658117638960}
+  m_Layer: 0
+  m_Name: DampedLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2755261879220611107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830326364114096716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7137310839811121874}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5877826658117638960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830326364114096716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b37cffab30b939469bac076fdd82c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 0
+  m_Data:
+    m_ConstrainedObject: {fileID: 9198360124162515152}
+    m_Source: {fileID: 8412373351453187677}
+    m_DampPosition: 0.034
+    m_DampRotation: 0.058
+    m_MaintainAim: 1
 --- !u!1 &992671022502555849
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +569,7 @@ Transform:
   - {fileID: 4706328764853088144}
   - {fileID: 5642506872604250312}
   - {fileID: 6720371219786749379}
+  - {fileID: 2755261879220611107}
   m_Father: {fileID: 1642661570807302255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1500232566435694756
@@ -1034,6 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c88d02c0894644ea467f21b789efcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleSounds: []
   footstepSounds:
   - {fileID: 8300000, guid: d0275d61758dde648b77cff4057e848f, type: 3}
   - {fileID: 8300000, guid: 677166e6999f000479c0c1bcb310fa2c, type: 3}
@@ -1427,6 +1480,7 @@ Transform:
   m_Children:
   - {fileID: 617753099115307104}
   - {fileID: 9198360124162515152}
+  - {fileID: 8412373351453187677}
   - {fileID: 3215334838340095488}
   m_Father: {fileID: 3329233924761983690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2584,6 +2638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6ac0a790544a23a42035ccad0ada03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _laserHitMask:
+    serializedVersion: 2
+    m_Bits: 9
 --- !u!1 &4547453653708580343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Data:
     m_ConstrainedObject: {fileID: 7034947763974406037}
     m_SourceObjects:
@@ -3166,7 +3223,7 @@ MonoBehaviour:
         weight: 0
     m_Offset: {x: 0, y: 0, z: 0}
     m_MinLimit: -180
-    m_MaxLimit: 180
+    m_MaxLimit: 25
     m_AimAxis: 3
     m_UpAxis: 1
     m_WorldUpType: 0
@@ -3174,8 +3231,8 @@ MonoBehaviour:
     m_WorldUpAxis: 2
     m_MaintainOffset: 1
     m_ConstrainedAxes:
-      x: 1
-      y: 1
+      x: 0
+      y: 0
       z: 1
 --- !u!1 &5721680144529985933
 GameObject:
@@ -3494,6 +3551,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4130289075185241628}
   m_LocalEulerAnglesHint: {x: 0.13390085, y: 0.849597, z: -90.782745}
+--- !u!1 &6313283908428436427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8412373351453187677}
+  m_Layer: 0
+  m_Name: RightHandTargetDamper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8412373351453187677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313283908428436427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
+  m_LocalPosition: {x: 0.09, y: -0.11, z: 0.206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6879392070559308748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6391063556258569281
 GameObject:
   m_ObjectHideFlags: 0

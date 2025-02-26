@@ -130,7 +130,7 @@ namespace Player
                 }
 
                 _isCrouching = !_isCrouching;
-                _targetHeight = _isCrouching ? crouchSettings.crouchHeight : crouchSettings.standingHeight;
+                _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
 
                 _targetCameraY = _isCrouching
                     ? _initialCameraY - crouchSettings.cameraCrouchOffset

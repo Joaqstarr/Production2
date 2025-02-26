@@ -1,3 +1,4 @@
+using AI.Sensing;
 using UnityEngine;
 
 namespace Player.LaserPointer
@@ -5,6 +6,8 @@ namespace Player.LaserPointer
     [RequireComponent(typeof(LineRenderer))]
     public class LaserBeam : MonoBehaviour
     {
+        [SerializeField]
+        private LayerMask _laserHitMask;
         private LineRenderer _lineRenderer;
         private void Start()
         {
@@ -13,10 +16,14 @@ namespace Player.LaserPointer
 
         private void Update()
         {
+            if(_lineRenderer.enabled == false) return;
+            
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 5000, _laserHitMask))
             {
                 _lineRenderer.SetPosition(1, new Vector3(0, 0, hit.distance));
+                
+                SenseNotificationSubsystem.TriggerLaserNotification(hit.point);
             }
             else
             {
