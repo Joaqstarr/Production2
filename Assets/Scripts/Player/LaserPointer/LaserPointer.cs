@@ -1,5 +1,6 @@
 using System;
 using AI.Sensing;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -30,8 +31,11 @@ namespace Player.LaserPointer
         private void OnEnable()
         {
             _laserPointerObject.gameObject.SetActive(true);
-            
-            _laserHoldConstraint.weight = 1;
+
+            DOVirtual.Float(0, 1, 0.3f, interp =>
+            {
+                _laserHoldConstraint.weight = interp;
+            }).SetEase(Ease.InCubic);
 
             _animator.SetBool(IsHoldingLaserPointer, true);
             _controls.OnLaserPressed += OnLaserPressed;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
+using Player.LaserPointer;
 
 namespace Player
 {
@@ -35,6 +36,8 @@ namespace Player
 
         private bool _isGrounded;
 
+        [SerializeField]
+        private LaserPointer.LaserPointer _laserPointer;
         [SerializeField] private GameObject sprintEffectObject;
         [SerializeField] private Volume globalVolume;
         private Vignette _vignette;
@@ -65,6 +68,7 @@ namespace Player
             {
                 _vignette = vignette;
             }
+
         }
 
         private void Update()
@@ -198,6 +202,11 @@ namespace Player
         public float GetCrouchTransitionSpeed()
         {
             return crouchSettings.crouchTransitionSpeed;
+        }
+        
+        public void EnableLaserPointer()
+        {
+            _laserPointer.enabled = true;
         }
     }
 }
