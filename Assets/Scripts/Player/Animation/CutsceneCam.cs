@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using AI.Robot;
+using AI.Robot.Animation;
 using Cinemachine;
 using UnityEngine;
 

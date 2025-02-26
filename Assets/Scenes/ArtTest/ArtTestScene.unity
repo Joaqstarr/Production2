@@ -1026,12 +1026,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41818fd921d27ce468f77f326fd47693, type: 3}
---- !u!95 &398444962 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 209082701476905294, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1367368748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506620173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _robotAnimator: {fileID: 1458057671}
-  _playerAnimator: {fileID: 398444962}
   _catchPosition: {fileID: 1458057673}
 --- !u!1001 &1514743961
 PrefabInstance:

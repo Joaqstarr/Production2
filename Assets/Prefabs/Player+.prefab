@@ -996,6 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa564c430a53a646b4fb6f5c8c91903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _distance: 0.9
 --- !u!136 &5375054286560884829
 CapsuleCollider:
   m_ObjectHideFlags: 0

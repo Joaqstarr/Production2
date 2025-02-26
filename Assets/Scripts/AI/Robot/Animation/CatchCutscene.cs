@@ -2,10 +2,11 @@ using System.Collections;
 using Player;
 using Player.Animation;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-namespace AI.Robot
+namespace AI.Robot.Animation
 {
     public class CatchCutscene : MonoBehaviour
     {
@@ -30,11 +31,13 @@ namespace AI.Robot
 
         private IEnumerator PlayCatchCutscene(Transform player)
         {
-
-
-            transform.forward = (player.position - transform.position).normalized;
             
+            
+            transform.forward = (player.transform.position - transform.position).normalized;
+
             OnCaughtCutscneTriggered?.Invoke(transform);
+
+
             
 
 

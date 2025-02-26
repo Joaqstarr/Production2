@@ -1,4 +1,4 @@
-using AI.Robot;
+using AI.Robot.Animation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +10,14 @@ namespace Player.Animation
     {
         private static readonly int CaughtTrigger = Animator.StringToHash("Caught");
 
+        [SerializeField]
+        private float _distance = 0.8f;
         private Animator _animator;
         private PlayerManager _playerManager;
+        private CharacterController _characterController;
         private void Awake()
         {
+            _characterController = GetComponent<CharacterController>();
             _playerManager = GetComponent<PlayerManager>();
             _animator = GetComponent<Animator>();
         }
@@ -31,7 +35,10 @@ namespace Player.Animation
             // Disable player movement and AI logic
             _playerManager.enabled = false;
 
-            transform.position = robot.position;
+            _characterController.enabled = false;
+
+            Vector3 dir = (transform.position - robot.position).normalized;
+            transform.position = robot.position + (dir * _distance);
             transform.rotation = robot.rotation;
 
             _animator.SetTrigger(CaughtTrigger);

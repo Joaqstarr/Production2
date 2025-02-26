@@ -14,6 +14,8 @@ namespace AI.Sensing
 
         protected override bool IsNotificationInRange(SenseNotificationContext notification)
         {
+            if(_transform == null) return false;
+            
             return Vector3.Distance(notification.Position, _transform.position) < _range;
         }
     }
