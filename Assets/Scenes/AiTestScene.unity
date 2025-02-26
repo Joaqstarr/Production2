@@ -1295,6 +1295,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767004711589593827, guid: 140c71a4666e8244fb56f4676c6fbef3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3262,6 +3292,7 @@ GameObject:
   - component: {fileID: 1910359079}
   - component: {fileID: 1910359078}
   - component: {fileID: 1910359077}
+  - component: {fileID: 1910359081}
   m_Layer: 0
   m_Name: MainCam
   m_TagString: Untagged
@@ -3289,7 +3320,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.2
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -3498,6 +3529,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1910359081
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910359076}
+  m_Enabled: 1
 --- !u!43 &2130000833
 Mesh:
   m_ObjectHideFlags: 0
@@ -3676,6 +3715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse
       objectReference: {fileID: 0}
+    - target: {fileID: 2140552202129194274, guid: 56334deddb038144d9ded2a89e6ac437,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2388286985055505259, guid: 56334deddb038144d9ded2a89e6ac437,
         type: 3}
       propertyPath: m_Layer
@@ -3765,6 +3809,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1800757641054737861, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6068906199735510198, guid: 51e20db8bb07f584686a5ad80d88a06b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3819,6 +3868,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173195903642588762, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173195903642588762, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
