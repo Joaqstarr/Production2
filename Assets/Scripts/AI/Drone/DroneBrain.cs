@@ -69,8 +69,7 @@ namespace AI.Drone
 
                 targetRotation = Quaternion.Euler(droneRotation, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
 
-                droneObject.DORotateQuaternion(targetRotation, 0.5f)
-                    .SetEase(Ease.OutQuad);
+                droneObject.DORotateQuaternion(targetRotation, 0.5f).SetEase(Ease.OutQuad);
             }
         }
         private void ResetRotation()

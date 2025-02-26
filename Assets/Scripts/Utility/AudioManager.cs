@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAudio : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public AudioClip[] footstepSounds;
     private AudioSource audioSource;
