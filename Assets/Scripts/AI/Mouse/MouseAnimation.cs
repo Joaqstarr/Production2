@@ -18,12 +18,12 @@ namespace AI.Mouse
         [SerializeField] private float _leanSpeed = 1;
 
         private NavMeshAgent _navAgent;
-
-
+        private AudioManager _audioManager;
 
         private void Awake()
         {
             _navAgent = GetComponent<NavMeshAgent>();
+            _audioManager = FindObjectOfType<AudioManager>();
         }
         private void Update()
         {
@@ -60,6 +60,8 @@ namespace AI.Mouse
 
             Vector3 localRotVector = _body.InverseTransformDirection(rotationVector);
             _body.Rotate(localRotVector * -_rotationSpeed * Time.deltaTime);
+
+            _audioManager.PlayIdleLoop();
         }
     }
 }
