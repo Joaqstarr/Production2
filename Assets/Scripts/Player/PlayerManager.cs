@@ -13,7 +13,7 @@ namespace Player
         private PlayerControls _playerControls;
         private CharacterController _characterController;
 
-        [Header("Scriptable Object Settings")] [SerializeField]
+        [Header("Scriptable Object Settings")] [SerializeField] 
         private MovementSettings movementSettings;
 
         [SerializeField] private LookSettings lookSettings;
