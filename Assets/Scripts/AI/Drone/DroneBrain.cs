@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
@@ -20,6 +21,9 @@ namespace AI.Drone
 
         private bool _hasMoved = false;
         private Quaternion _initialRotation;
+        
+        [field:SerializeField]
+        public Transform _lookTransform { get; private set; }
 
         private void Awake()
         {
@@ -85,5 +89,6 @@ namespace AI.Drone
                 Gizmos.DrawWireSphere(PatrolPoints[i].position, 0.6f);
             }
         }
+        
     }
 }

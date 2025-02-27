@@ -1,30 +1,59 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 namespace AI.Drone.States.SearchStates
 {
-    public class PatrolState: BaseState
-    { 
+    public class PatrolState : BaseState
+    {
         private SearchState _searchState;
-        public PatrolState(DroneBrain drone, DroneStateMachineManager manager,  SearchState searchState) : base(drone, manager)
+        private Transform _lookTransform;
+        private float _sweepDuration = 4f; // Duration of each sweep
+        private float _radius = 3f; // Radius of the circular movement
+        private float _angle = 0;
+        private Coroutine _sweepCoroutine;
+
+        public PatrolState(DroneBrain drone, DroneStateMachineManager manager, SearchState searchState) : base(drone, manager)
         {
             _searchState = searchState;
+            _lookTransform = drone._lookTransform;
         }
 
         protected override void OnEnterState()
         {
             base.OnEnterState();
             Transform nextPoint = GetRandomPatrolPoint();
-            
             _drone.Agent.SetDestination(nextPoint.position);
+            
         }
 
         public override void OnUpdateState()
         {
             base.OnUpdateState();
 
+            _angle += (360f / _sweepDuration) * Time.deltaTime;
+            if (_angle >= 360f) _angle -= 360f;
+
+            float radians = _angle * Mathf.Deg2Rad;
+            Vector3 targetPosition = _drone.transform.position + new Vector3(Mathf.Cos(radians) * _radius, 0, Mathf.Sin(radians) * _radius);
+            _lookTransform.position = targetPosition;
+            
+            
             if (_drone.Agent.remainingDistance <= _drone.Agent.stoppingDistance)
             {
                 _searchState.SwitchToLookState();
+            }
+        }
+
+
+
+
+        protected override void OnExitState()
+        {
+            base.OnExitState();
+            if (_sweepCoroutine != null)
+            {
+                _drone.StopCoroutine(_sweepCoroutine);
             }
         }
 

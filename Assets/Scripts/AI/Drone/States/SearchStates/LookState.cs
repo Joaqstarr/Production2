@@ -17,11 +17,16 @@ namespace AI.Drone.States.SearchStates
             base.OnEnterState();
 
             _drone.Agent.SetDestination(_drone.transform.position);
-            _drone.StartCoroutine(Wait3Seconds());
-            IEnumerator Wait3Seconds()
+
+        }
+
+        public override void OnUpdateState()
+        {
+            base.OnUpdateState();
+
+            if (_searchState.TimeoutTimer <= 0)
             {
-                yield return new WaitForSeconds(3);
-                _searchState.SwitchToPatrolState();
+                _searchState.SwitchToLostState();;
             }
         }
     }
