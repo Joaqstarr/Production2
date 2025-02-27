@@ -49,5 +49,16 @@ namespace AI.Mouse
         {
             _targPosition = notification.Position;
         }
+        
+        public void OnStomped()
+        {
+            Destroy(gameObject);
+
+        }
+        public void OnPrepareStomped()
+        {
+            _agent.isStopped = true;
+            enabled = false;
+        }
     }
 }
