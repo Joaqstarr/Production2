@@ -24,20 +24,23 @@ namespace AI.Robot
 
         private void OnEnable()
         {
-            CatchCutscene.OnCaughtCutscneTriggered += OnCaughtCutscneTriggered;
+            CatchCutscene.OnCaughtCutscneTriggered += OnCaughtCutsceneTriggered;
         }
 
         private void OnDisable()
         {
-            CatchCutscene.OnCaughtCutscneTriggered -= OnCaughtCutscneTriggered;
+            CatchCutscene.OnCaughtCutscneTriggered -= OnCaughtCutsceneTriggered;
 
         }
 
 
-        private void OnCaughtCutscneTriggered(Transform player)
+        private void OnCaughtCutsceneTriggered(Transform player)
         {
 
-            Agent.isStopped = true;
+            if (Agent.enabled)
+            {
+                Agent.isStopped = true;
+            }
             Agent.enabled = false;
             enabled = false;
         }
