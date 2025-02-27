@@ -590,6 +590,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1515693553862007224}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1db721057acea724eb1e7c208411f20a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 364821083419024564}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1db721057acea724eb1e7c208411f20a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 273334673815709486}
   m_SourcePrefab: {fileID: 100100000, guid: 1db721057acea724eb1e7c208411f20a, type: 3}
 --- !u!95 &205259975782268620 stripped
 Animator:
@@ -619,11 +627,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 250
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -803,3 +811,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &364821083419024564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877777990115589644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a92b492b014621a982c4243da3777e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stompOffset: {x: -1, y: 0, z: 0.44969}
+  _adjustmentSpeed: 5
+--- !u!114 &273334673815709486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877777990115589644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad07b8ffeb304afcbf1c48638cd865d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

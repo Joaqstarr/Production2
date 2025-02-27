@@ -12,7 +12,7 @@ namespace AI.Drone.States.SearchStates
         private Transform _lookTransform;
         private int _moveCount = 3; // Number of random movements
         private float _moveDuration = 0.5f; // Duration of each movement
-        private float _waitTime = 2f; // Duration of each movement
+        private float _waitTime = 1.2f; // Duration of each movement
 
         private float _searchDistance = 5;
         public LostState(DroneBrain drone, DroneStateMachineManager manager, SearchState searchState) : base(drone,
