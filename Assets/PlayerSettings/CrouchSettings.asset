@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5234f6ba21574f74eb84b818503b7f7b, type: 3}
   m_Name: CrouchSettings
   m_EditorClassIdentifier: 
-  crouchSpeed: 2.5
+  crouchSpeed: 1
   crouchHeight: 1.256
   standingHeight: 1.256
   crouchTransitionSpeed: 10
   cameraCrouchOffset: 0.35
+  StandColliderHeight: 1.4
+  CrouchColliderHeight: 0.7

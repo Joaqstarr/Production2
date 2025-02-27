@@ -71,7 +71,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.989973
+      - time: 0.8691271
         functionName: OnStompEnd
         data: 
         objectReferenceParameter: {instanceID: 0}

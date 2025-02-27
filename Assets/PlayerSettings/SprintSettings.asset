@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed35c9207d3f04f41a0d1ccdbcdeb9a9, type: 3}
   m_Name: SprintSettings
   m_EditorClassIdentifier: 
-  sprintSpeed: 8
+  sprintSpeed: 3
   sprintFOV: 70
   normalFOV: 60
   zoomSpeed: 10
