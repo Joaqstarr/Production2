@@ -5033,6 +5033,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3096768771073675021, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096768771073675021, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096768771073675021, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0369
+      objectReference: {fileID: 0}
     - target: {fileID: 3532075121781592626, guid: 3bcef9d0d34f6bf479728074badc892d,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -5247,6 +5262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062717719278496633, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4670836
       objectReference: {fileID: 0}
     - target: {fileID: 6130120069349861783, guid: 3bcef9d0d34f6bf479728074badc892d,
         type: 3}
