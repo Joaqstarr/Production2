@@ -33,7 +33,7 @@ namespace AI.Drone.States.SearchStates
             for (int i = 0; i < _moveCount; i++)
             {
                 Vector3 randomPosition = _lookTransform.position +
-                                         new Vector3(Random.Range(-1f, 1f) * _searchDistance, Random.Range(-1f, 1f) * _searchDistance,
+                                         new Vector3(Random.Range(-1f, 1f) * _searchDistance, Random.Range(-1f, 1f) ,
                                              Random.Range(-1f, 1f) * _searchDistance);
                 _lookTransform.DOMove(randomPosition, _moveDuration);
                 yield return new WaitForSeconds(_waitTime);
