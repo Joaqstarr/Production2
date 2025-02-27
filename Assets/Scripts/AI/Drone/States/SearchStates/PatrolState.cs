@@ -12,6 +12,9 @@ namespace AI.Drone.States.SearchStates
         private float _radius = 3f; // Radius of the circular movement
         private float _angle = 0;
         private Coroutine _sweepCoroutine;
+        
+        float _amplitude = 1f;
+        float _frequency = 1f;
 
         public PatrolState(DroneBrain drone, DroneStateMachineManager manager, SearchState searchState) : base(drone, manager)
         {
@@ -34,8 +37,10 @@ namespace AI.Drone.States.SearchStates
             _angle += (360f / _sweepDuration) * Time.deltaTime;
             if (_angle >= 360f) _angle -= 360f;
 
+            float sinedRadius = _radius + (Mathf.Sin(Time.time * _frequency) * _amplitude);
+            
             float radians = _angle * Mathf.Deg2Rad;
-            Vector3 targetPosition = _drone.transform.position + new Vector3(Mathf.Cos(radians) * _radius, 0, Mathf.Sin(radians) * _radius);
+            Vector3 targetPosition = _drone.transform.position + new Vector3(Mathf.Cos(radians) * sinedRadius, 0, Mathf.Sin(radians) * sinedRadius);
             _lookTransform.position = targetPosition;
             
             
