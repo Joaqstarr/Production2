@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using AI.Robot.Animation;
 
 namespace AI.Robot
 {
@@ -14,6 +15,31 @@ namespace AI.Robot
         {
             Agent = GetComponent<NavMeshAgent>();
             RobotStateMachine = new RobotStateMachineManager(this);
+        }
+
+        ~RobotBrain()
+        {
+            RobotStateMachine = null;
+        }
+
+        private void OnEnable()
+        {
+            CatchCutscene.OnCaughtCutscneTriggered += OnCaughtCutscneTriggered;
+        }
+
+        private void OnDisable()
+        {
+            CatchCutscene.OnCaughtCutscneTriggered -= OnCaughtCutscneTriggered;
+
+        }
+
+
+        private void OnCaughtCutscneTriggered(Transform player)
+        {
+
+            Agent.isStopped = true;
+            Agent.enabled = false;
+            enabled = false;
         }
     }
 }

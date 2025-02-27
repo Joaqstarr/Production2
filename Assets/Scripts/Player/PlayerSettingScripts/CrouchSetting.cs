@@ -11,4 +11,8 @@ public class CrouchSettings : ScriptableObject
     public float standingHeight = 2f;
     public float crouchTransitionSpeed = 6f;
     public float cameraCrouchOffset = 0.5f;
+
+    public float StandColliderHeight = 1.4f;
+    public float CrouchColliderHeight = 0.7f;
+    
 }

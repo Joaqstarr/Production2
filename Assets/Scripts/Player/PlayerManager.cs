@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
+using Player.LaserPointer;
 
 namespace Player
 {
@@ -12,25 +14,30 @@ namespace Player
         private PlayerControls _playerControls;
         private CharacterController _characterController;
 
-        [Header("Scriptable Object Settings")]
-        [SerializeField] private MovementSettings movementSettings;
+        [Header("Scriptable Object Settings")] [SerializeField] 
+        private MovementSettings movementSettings;
+
         [SerializeField] private LookSettings lookSettings;
         [SerializeField] private GravitySettings gravitySettings;
         [SerializeField] private CrouchSettings crouchSettings;
         [SerializeField] private SprintSettings sprintSettings;
         [SerializeField] private JumpSettings jumpSettings;
 
-        [Header("Camera Setup")]
-        [SerializeField] private Transform cameraTransform;
-        [SerializeField] private Camera playerCamera;
+        [Header("Camera Setup")] [SerializeField]
+        private Transform cameraTransform;
 
-        [Header("Ground Check")]
-        [SerializeField] private Transform groundCheckPoint;
+        [SerializeField] private CinemachineVirtualCamera playerCamera;
+
+        [Header("Ground Check")] [SerializeField]
+        private Transform groundCheckPoint;
+
         [SerializeField] private float groundCheckDistance = 0.3f;
         [SerializeField] private LayerMask groundLayer;
 
         private bool _isGrounded;
 
+        [SerializeField]
+        private LaserPointer.LaserPointer _laserPointer;
         [SerializeField] private GameObject sprintEffectObject;
         [SerializeField] private Volume globalVolume;
         private Vignette _vignette;
@@ -41,8 +48,6 @@ namespace Player
 
         private bool _isSprinting = false;
         private bool _isCrouching = false;
-        private float _coyoteTimeCounter;
-        private float _jumpBufferCounter;
 
         private float _targetHeight;
         private float _initialCameraY;
@@ -55,7 +60,7 @@ namespace Player
             Cursor.lockState = CursorLockMode.Locked;
 
             _initialCameraY = cameraTransform.localPosition.y;
-            _targetCameraY = _initialCameraY; 
+            _targetCameraY = _initialCameraY;
 
             _targetHeight = crouchSettings.standingHeight;
 
@@ -63,6 +68,7 @@ namespace Player
             {
                 _vignette = vignette;
             }
+
         }
 
         private void Update()
@@ -76,7 +82,7 @@ namespace Player
                 HandleMovement();
                 HandleLook();
                 HandleCrouching();
-                HandleSprinting();                
+                HandleSprinting();
             }
         }
 
@@ -84,11 +90,9 @@ namespace Player
         {
             Vector3 forwardMove = transform.forward * _movementInput.y;
             Vector3 rightMove = transform.right * _movementInput.x;
-
             Vector3 movementDir = (forwardMove + rightMove).normalized;
 
             _currentGravity += gravitySettings.gravity * Time.deltaTime;
-
             movementDir.y = _currentGravity;
 
             float speed = movementSettings.walkSpeed;
@@ -114,7 +118,8 @@ namespace Player
 
             if (newRotation > 180f) newRotation -= 360f;
 
-            newRotation = Mathf.Clamp(newRotation, lookSettings.minMaxVerticalLook.x, lookSettings.minMaxVerticalLook.y);
+            newRotation = Mathf.Clamp(newRotation, lookSettings.minMaxVerticalLook.x,
+                lookSettings.minMaxVerticalLook.y);
 
             cameraTransform.localRotation = Quaternion.Euler(newRotation, 0f, 0f);
         }
@@ -129,7 +134,7 @@ namespace Player
                 }
 
                 _isCrouching = !_isCrouching;
-                _targetHeight = _isCrouching ? crouchSettings.crouchHeight : crouchSettings.standingHeight;
+                _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
 
                 _targetCameraY = _isCrouching
                     ? _initialCameraY - crouchSettings.cameraCrouchOffset
@@ -137,10 +142,12 @@ namespace Player
             }
 
             float currentHeight = _characterController.height;
-            _characterController.height = Mathf.Lerp(currentHeight, _targetHeight, Time.deltaTime * crouchSettings.crouchTransitionSpeed);
+            _characterController.height = Mathf.Lerp(currentHeight, _targetHeight,
+                Time.deltaTime * crouchSettings.crouchTransitionSpeed);
 
             Vector3 cameraPosition = cameraTransform.localPosition;
-            cameraPosition.y = Mathf.Lerp(cameraPosition.y, _targetCameraY, Time.deltaTime * crouchSettings.crouchTransitionSpeed);
+            cameraPosition.y = Mathf.Lerp(cameraPosition.y, _targetCameraY,
+                Time.deltaTime * crouchSettings.crouchTransitionSpeed);
             cameraTransform.localPosition = cameraPosition;
 
 
@@ -148,7 +155,8 @@ namespace Player
             if (_vignette != null)
             {
                 float targetVignetteIntensity = _isCrouching ? 0.25f : 0f;
-                _vignette.intensity.value = Mathf.Lerp(_vignette.intensity.value, targetVignetteIntensity, Time.deltaTime * 5f);
+                _vignette.intensity.value =
+                    Mathf.Lerp(_vignette.intensity.value, targetVignetteIntensity, Time.deltaTime * 5f);
             }
         }
 
@@ -158,7 +166,8 @@ namespace Player
             _isSprinting = Keyboard.current.leftShiftKey.isPressed && _movementInput != Vector2.zero && !_isCrouching;
 
             float targetFOV = _isSprinting ? sprintSettings.sprintFOV : sprintSettings.normalFOV;
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * sprintSettings.zoomSpeed);
+            playerCamera.m_Lens.FieldOfView = Mathf.Lerp(playerCamera.m_Lens.FieldOfView, targetFOV,
+                Time.deltaTime * sprintSettings.zoomSpeed);
 
             if (sprintEffectObject != null)
             {
@@ -166,50 +175,38 @@ namespace Player
             }
         }
 
-        //Note to self: Jump does not work when on object edge due to raycast. Find alternative method
+
         private void HandleJumping()
         {
             Debug.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance, Color.red);
 
             _isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, groundCheckDistance, groundLayer);
 
-            if (_isGrounded)
+            if (_isGrounded && _currentGravity < 0)
             {
-                _coyoteTimeCounter = jumpSettings.coyoteTime;
-            }
-            else
-            {
-                _coyoteTimeCounter -= Time.deltaTime;
+                _currentGravity = -2f;
             }
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame && _isGrounded)
             {
-                _jumpBufferCounter = jumpSettings.jumpBufferTime;
+                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity);
             }
-            else
-            {
-                _jumpBufferCounter -= Time.deltaTime;
-            }
+        }
 
-            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
-            {
-                _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity) * jumpSettings.jumpSpeedMultiplier;
 
-                _jumpBufferCounter = 0f;
-            }
-            else
-            {
-                if (_currentGravity < 0)
-                {
-                    _currentGravity += (gravitySettings.gravity * (jumpSettings.fallMultiplier - 1)) * Time.deltaTime;
-                }
-                else if (_currentGravity > 0 && !Keyboard.current.spaceKey.isPressed)
-                {
-                    _currentGravity += (gravitySettings.gravity * (jumpSettings.lowJumpMultiplier - 1)) * Time.deltaTime;
-                }
+        public bool IsCrouching()
+        {
+            return _isCrouching;
+        }
 
-                _currentGravity += gravitySettings.gravity * Time.deltaTime;
-            }
+        public float GetCrouchTransitionSpeed()
+        {
+            return crouchSettings.crouchTransitionSpeed;
+        }
+        
+        public void EnableLaserPointer()
+        {
+            _laserPointer.enabled = true;
         }
     }
 }

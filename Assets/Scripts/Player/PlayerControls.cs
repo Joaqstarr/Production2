@@ -13,7 +13,8 @@ namespace Player
         public bool IsLaserOn { get; private set; }
         public ButtonDelegate OnLaserPressed;
         public ButtonDelegate OnLaserUnpressed;
-       
+
+        public ButtonDelegate InteractPressed;
         void OnLook(InputValue input)
         {
             LookInput = input.Get<Vector2>();
@@ -41,6 +42,11 @@ namespace Player
             }
 
             IsLaserOn = newValue;
+        }
+        
+        void OnInteract()
+        {
+            InteractPressed?.Invoke();
         }
     }
 }

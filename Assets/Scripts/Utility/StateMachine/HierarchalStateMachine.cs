@@ -73,5 +73,10 @@ namespace Utility.StateMachine
                 _currentState.OnEnterState();
             }
         }
+
+        ~HierarchalStateMachine()
+        {
+            SwitchState(null);
+        }
     }
 }

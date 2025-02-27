@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 namespace AI.Drone
 {
@@ -13,6 +14,13 @@ namespace AI.Drone
         public Transform[] PatrolPoints { get; private set; } // Assign patrol points in the Inspector
 
         public NavMeshAgent Agent { get; private set; }
+
+        [SerializeField] private Transform droneObject;
+        public float droneRotation = 15f;
+
+        private bool _hasMoved = false;
+        private Quaternion _initialRotation;
+
         private void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
@@ -25,6 +33,8 @@ namespace AI.Drone
             {
                 _droneStateMachine.OnUpdateState();
             }
+
+            Movement();
         }
 
         private void FixedUpdate()
@@ -33,6 +43,38 @@ namespace AI.Drone
             {
                 _droneStateMachine.OnFixedUpdateState();
             }
+        }
+
+        private void Movement()
+        {
+            bool isMoving = Agent.velocity.magnitude > 0.1f; 
+
+            if (isMoving)
+            {
+                _hasMoved = true;
+                RotateDrone(Agent.velocity.normalized);
+            }
+            else if (!isMoving && _hasMoved)
+            {
+                _hasMoved = false;
+                ResetRotation();
+            }
+        }
+
+        private void RotateDrone(Vector3 movementDirection)
+        {
+            if (movementDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+
+                targetRotation = Quaternion.Euler(droneRotation, targetRotation.eulerAngles.y, targetRotation.eulerAngles.z);
+
+                droneObject.DORotateQuaternion(targetRotation, 0.5f).SetEase(Ease.OutQuad);
+            }
+        }
+        private void ResetRotation()
+        {
+            droneObject.DORotateQuaternion(_initialRotation, 0.5f).SetEase(Ease.OutQuad);
         }
 
         private void OnDrawGizmosSelected()

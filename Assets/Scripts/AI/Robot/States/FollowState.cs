@@ -11,6 +11,7 @@ namespace AI.Robot.States
             _alarmListener = new SenseAlarmListener();
 
         }
+
         
         protected override void OnEnterState()
         {
@@ -38,7 +39,10 @@ namespace AI.Robot.States
 
         private void OnAlarmHeard(SenseNotificationContext notification)
         {
-            _robotBrain.Agent.SetDestination(notification.Position);
+            if (_robotBrain != null && _robotBrain.enabled && _robotBrain.Agent.enabled)
+            {
+                _robotBrain.Agent.SetDestination(notification.Position);
+            }
         }
     }
 }
