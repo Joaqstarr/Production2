@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
+    public AudioClip[] crunchSounds;
 
     private AudioSource audioSource;
 
@@ -34,6 +35,18 @@ public class AudioManager : MonoBehaviour
         {
             AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
             audioSource.PlayOneShot(clip);
+        }
+    }
+
+    public void PlayCrunch(int index1, int index2)
+    {
+        if (footstepSounds.Length > 1 && index1 >= 0 && index1 < footstepSounds.Length && index2 >= 0 && index2 < footstepSounds.Length)
+        {
+            AudioClip clip1 = footstepSounds[index1];
+            AudioClip clip2 = footstepSounds[index2];
+
+            audioSource.PlayOneShot(clip1);
+            audioSource.PlayOneShot(clip2);
         }
     }
 }

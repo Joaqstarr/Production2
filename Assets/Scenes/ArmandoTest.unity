@@ -180,6 +180,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6460113751309063115, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: crunchSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460113751309063115, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: crunchSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bd5b3649a3142fb4f84d739672d81c44, type: 3}
+    - target: {fileID: 6460113751309063115, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: crunchSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25c8b4ade37ada248a937eca5d9bc616, type: 3}
     - target: {fileID: 6728401195427049024, guid: 51e20db8bb07f584686a5ad80d88a06b,
         type: 3}
       propertyPath: idleVolume
