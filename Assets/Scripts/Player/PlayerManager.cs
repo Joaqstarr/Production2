@@ -13,6 +13,7 @@ namespace Player
     {
         private PlayerControls _playerControls;
         private CharacterController _characterController;
+        private Animator _animator;
 
         [Header("Scriptable Object Settings")] [SerializeField] 
         private MovementSettings movementSettings;
@@ -57,6 +58,7 @@ namespace Player
         {
             _playerControls = GetComponent<PlayerControls>();
             _characterController = GetComponent<CharacterController>();
+            _animator = GetComponentInChildren<Animator>();
             Cursor.lockState = CursorLockMode.Locked;
 
             _initialCameraY = cameraTransform.localPosition.y;
@@ -173,6 +175,8 @@ namespace Player
             {
                 sprintEffectObject.SetActive(_isSprinting);
             }
+
+            _animator.speed = _isSprinting ? 1.3f : 1f;
         }
 
 

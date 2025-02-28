@@ -6,7 +6,7 @@ using UnityEngine;
 public class SprintSettings : ScriptableObject
 {
     [Header("Sprinting Settings")]
-    public float sprintSpeed = 8f;
+    public float sprintSpeed = 4f;
 
     [Header("Camera Zoom")]
     public float sprintFOV = 70f;
