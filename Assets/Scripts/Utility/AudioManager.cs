@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static event Action OnFootstep;
+
     public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
     public AudioClip[] crunchSounds;
@@ -24,7 +27,7 @@ public class AudioManager : MonoBehaviour
     {
         if (idleSounds.Length > 0)
         {
-            audioSource.clip = idleSounds[Random.Range(0, idleSounds.Length)];
+            audioSource.clip = idleSounds[UnityEngine.Random.Range(0, idleSounds.Length)];
             audioSource.Play();
         }
     }
@@ -33,9 +36,11 @@ public class AudioManager : MonoBehaviour
     {
         if (footstepSounds.Length > 0)
         {
-            AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
+            AudioClip clip = footstepSounds[UnityEngine.Random.Range(0, footstepSounds.Length)];
             audioSource.PlayOneShot(clip);
         }
+
+        OnFootstep?.Invoke();
     }
 
     public void PlayCrunch(int index1, int index2)

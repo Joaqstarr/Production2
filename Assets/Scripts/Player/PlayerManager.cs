@@ -29,13 +29,17 @@ namespace Player
 
         [SerializeField] private CinemachineVirtualCamera playerCamera;
 
-        [Header("Ground Check")] [SerializeField]
+        [Header("Ground Check")] 
+        [SerializeField]
         private Transform groundCheckPoint;
 
         [SerializeField] private float groundCheckDistance = 0.3f;
         [SerializeField] private LayerMask groundLayer;
 
         private bool _isGrounded;
+
+        [Header("Footstep Particle")]
+        [SerializeField] private ParticleSystem footstepEffect;
 
         [SerializeField]
         private LaserPointer.LaserPointer _laserPointer;
@@ -194,6 +198,22 @@ namespace Player
             if (Keyboard.current.spaceKey.wasPressedThisFrame && _isGrounded)
             {
                 _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity);
+            }
+        }
+
+        private void OnEnable()
+        {
+            AudioManager.OnFootstep += PlayFootstepEffect; 
+        }
+        private void OnDisable()
+        {
+            AudioManager.OnFootstep -= PlayFootstepEffect;
+        }
+        private void PlayFootstepEffect()
+        {
+            if (_isGrounded)
+            {
+                footstepEffect.Play();
             }
         }
 
