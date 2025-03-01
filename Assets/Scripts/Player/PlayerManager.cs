@@ -79,16 +79,19 @@ namespace Player
 
         private void Update()
         {
-            if (_playerControls)
+            if (!PauseMenu.isPaused)
             {
-                _movementInput = _playerControls.MovementInput;
-                _lookInput = _playerControls.LookInput;
+                if (_playerControls)
+                {
+                    _movementInput = _playerControls.MovementInput;
+                    _lookInput = _playerControls.LookInput;
 
-                HandleJumping();
-                HandleMovement();
-                HandleLook();
-                HandleCrouching();
-                HandleSprinting();
+                    HandleJumping();
+                    HandleMovement();
+                    HandleLook();
+                    HandleCrouching();
+                    HandleSprinting();
+                }
             }
         }
 

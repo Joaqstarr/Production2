@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace AI.Robot.Animation
 {
@@ -16,11 +15,11 @@ namespace AI.Robot.Animation
         private Vector3 _targetPosition;
         private Transform _stompTarget;
         private Animator _stompAnimator;
-        private NavMeshAgent _agent;
+        private UnityEngine.AI.NavMeshAgent _agent;
 
         private void Start()
         {
-            _agent = GetComponent<NavMeshAgent>();
+            _agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
             _stompAnimator = GetComponent<Animator>();
         }
 
