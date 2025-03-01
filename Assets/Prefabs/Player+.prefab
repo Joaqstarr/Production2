@@ -849,6 +849,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  footstepEffect: {fileID: 0}
+  _laserPointer: {fileID: 5232426603532209997}
   sprintEffectObject: {fileID: 2090929745400293446}
   globalVolume: {fileID: 5579630851048307597}
 --- !u!114 &9145139337873646369
@@ -1070,8 +1072,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.32
-  m_Height: 1.2
+  m_Radius: 0.18
+  m_Height: 0.69
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &6144199769222131012
@@ -1094,6 +1096,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cd42ac464ba41344873f12ed577e90f, type: 3}
   - {fileID: 8300000, guid: dcbf53d14ae12e64c9f02e7b33c66c4b, type: 3}
   - {fileID: 8300000, guid: 6af503bf059f0504d880e31149f2f1d7, type: 3}
+  crunchSounds: []
 --- !u!82 &3216743092235445643
 AudioSource:
   m_ObjectHideFlags: 0

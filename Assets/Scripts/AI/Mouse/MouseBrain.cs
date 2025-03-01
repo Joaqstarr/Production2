@@ -42,7 +42,11 @@ namespace AI.Mouse
             }
 
 
-            _agent.SetDestination(transform.position + dir);
+            if (_agent.isOnNavMesh)
+            {
+                _agent.SetDestination(transform.position + dir);
+            }
+
         }
 
         private void OnLaserReceived(SenseNotificationContext notification)

@@ -211,7 +211,7 @@ namespace Player
         }
         private void PlayFootstepEffect()
         {
-            if (_isGrounded)
+            if (_isGrounded && footstepEffect != null)
             {
                 footstepEffect.Play();
             }

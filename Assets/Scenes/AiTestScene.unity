@@ -3718,11 +3718,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2725880343301799138, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      propertyPath: _laserPointer
-      value: 
-      objectReference: {fileID: 2071887485}
     - target: {fileID: 2792525670111915828, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
         type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -3892,26 +3887,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232426603532209997, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5375054286560884829, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      propertyPath: m_Height
-      value: 0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 5375054286560884829, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5375054286560884829, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5397664389814873150, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
         type: 3}
@@ -4537,18 +4512,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: b290e6eed5c9c7143a2320d11df7d8d3, type: 2}
   m_BuildHeightMesh: 0
---- !u!114 &2071887485 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5232426603532209997, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1638902296}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcc0d003e3c7904c8c9aaf3163d4824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2071887490 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2725880343301799138, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
