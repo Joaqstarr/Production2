@@ -16,7 +16,7 @@ namespace AI.Drone.States
         private SightSenseListener _sightSensor;
         public SearchState(DroneBrain brain, DroneStateMachineManager manager) : base(brain, manager)
         {
-            _sightSensor = new SightSenseListener(_gameObject, 10);
+            _sightSensor = new SightSenseListener(_gameObject, brain._lookRadius);
             _patrolState = new PatrolState(brain, manager, this);
             _lookState = new LookState(brain, manager, this);
             _lostState = new LostState(brain, manager, this);

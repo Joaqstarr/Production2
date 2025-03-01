@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 3089325187683835885, guid: 6470e9e3f2ada5b4395eac9b73ee3d8e,
         type: 3}
       propertyPath: m_Name
-      value: Wall With Door Variant
+      value: WallWithDoor_V
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

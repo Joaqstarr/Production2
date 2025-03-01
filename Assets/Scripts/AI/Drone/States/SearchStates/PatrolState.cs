@@ -18,6 +18,8 @@ namespace AI.Drone.States.SearchStates
 
         public PatrolState(DroneBrain drone, DroneStateMachineManager manager, SearchState searchState) : base(drone, manager)
         {
+            //light is big so must make radius a bit smaller
+            _radius = drone._lookRadius / 3;
             _searchState = searchState;
             _lookTransform = drone._lookTransform;
         }

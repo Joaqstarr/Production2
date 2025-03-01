@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5905784401527982934}
+  - component: {fileID: 167270480252314141}
   m_Layer: 0
   m_Name: Pallet Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5905784401527982934
 Transform:
@@ -35,6 +36,22 @@ Transform:
   - {fileID: 1361242824591472490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167270480252314141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156021960678031205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.2077823, y: 1.8523929, z: 2.0566869}
+  m_Center: {x: -0.10389137, y: 0.76527023, z: 0.35834336}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2503138389865159143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,6 +64,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodenPallet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889651864071751137, guid: 3231b50bd34f7b04299fa196ca3729a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
@@ -66,7 +88,7 @@ PrefabInstance:
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.963
+      value: 0.6089387
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
@@ -137,6 +159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPallet
       objectReference: {fileID: 0}
+    - target: {fileID: 4889651864071751137, guid: 3231b50bd34f7b04299fa196ca3729a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -155,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.444
+      value: 1.0899386
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
@@ -224,32 +251,37 @@ PrefabInstance:
     - target: {fileID: 3664052370020881907, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.6971913
+      value: 0.69719124
       objectReference: {fileID: 0}
     - target: {fileID: 3664052370020881907, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.1206492
+      value: 0.10696695
       objectReference: {fileID: 0}
     - target: {fileID: 3664052370020881907, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.00016575606
+      value: -0.00016521353
       objectReference: {fileID: 0}
     - target: {fileID: 3664052370020881907, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.57407504
+      value: 0.06723474
       objectReference: {fileID: 0}
     - target: {fileID: 3664052370020881907, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.0000000021175912
+      value: 7.0603155e-11
       objectReference: {fileID: 0}
     - target: {fileID: 4889651864071751137, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_Name
       value: WoodenPallet (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889651864071751137, guid: 3231b50bd34f7b04299fa196ca3729a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
@@ -269,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9655313
+      value: -0.38852978
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
@@ -340,6 +372,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPallet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4889651864071751137, guid: 3231b50bd34f7b04299fa196ca3729a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -358,7 +395,7 @@ PrefabInstance:
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.47
+      value: 0.11593866
       objectReference: {fileID: 0}
     - target: {fileID: 5228776862244839259, guid: 3231b50bd34f7b04299fa196ca3729a2,
         type: 3}

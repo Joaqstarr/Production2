@@ -21,7 +21,8 @@ namespace AI.Drone
 
         private bool _hasMoved = false;
         private Quaternion _initialRotation;
-        
+
+        [field: SerializeField] public float _lookRadius { get; private set; } = 10;
         [field:SerializeField]
         public Transform _lookTransform { get; private set; }
 
@@ -88,6 +89,9 @@ namespace AI.Drone
             {
                 Gizmos.DrawWireSphere(PatrolPoints[i].position, 0.6f);
             }
+            
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, _lookRadius);
         }
         
     }
