@@ -25,9 +25,9 @@ public class MenuManager : MonoBehaviour
         MenuInput.OnTogglePause += OnTogglePause;
     }
 
-    private void OnTogglePause(bool isopen)
+    private void OnTogglePause()
     {
-        if (isopen)
+        if (isPaused)
         {
             Pause();
         }

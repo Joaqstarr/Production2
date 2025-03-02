@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MenuInput : MonoBehaviour
 {
-    public bool IsMenuOpen { get; private set; }
     private PlayerInput _playerInput;
     
-    public delegate void PauseDelegate(bool isOpen);
+    public delegate void PauseDelegate();
     public static PauseDelegate OnTogglePause;
 
     private void Awake()
@@ -21,9 +20,8 @@ public class MenuInput : MonoBehaviour
     private void OnToggleMenu(InputValue value)
     {
 
-        IsMenuOpen = !IsMenuOpen;
 
 
-        OnTogglePause?.Invoke(IsMenuOpen);
+        OnTogglePause?.Invoke();
     }
 }
