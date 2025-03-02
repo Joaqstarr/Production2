@@ -266,7 +266,7 @@ namespace Player
 
         public bool IsCrouching()
         {
-            return _isCrouching;
+            return _isCrouching || _uncrouchOstructed;
         }
 
         public float GetCrouchTransitionSpeed()
