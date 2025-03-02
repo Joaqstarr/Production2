@@ -87,10 +87,15 @@ namespace AI.Drone
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            for (int i = 0; i < PatrolPoints.Length; i++)
+            if (PatrolPoints != null)
             {
-                Gizmos.DrawWireSphere(PatrolPoints[i].position, 0.6f);
+                for (int i = 0; i < PatrolPoints.Length; i++)
+                {
+                    if(PatrolPoints[i] != null)
+                        Gizmos.DrawWireSphere(PatrolPoints[i].position, 0.6f);
+                }
             }
+
             
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, _lookRadius);

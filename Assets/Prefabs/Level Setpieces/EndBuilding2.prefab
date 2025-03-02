@@ -8956,6 +8956,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9021683618259136431}
     m_Modifications:
+    - target: {fileID: 1800757641054737861, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: <AlarmGroupID>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6068906199735510198, guid: 51e20db8bb07f584686a5ad80d88a06b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10892,6 +10897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7046760236488406036, guid: 3bcef9d0d34f6bf479728074badc892d,
         type: 3}
+      propertyPath: <AlertGroupID>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046760236488406036, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
       propertyPath: <PatrolPoints>k__BackingField.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11181,6 +11191,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9021683618259136431}
     m_Modifications:
+    - target: {fileID: 1800757641054737861, guid: 51e20db8bb07f584686a5ad80d88a06b,
+        type: 3}
+      propertyPath: <AlarmGroupID>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6068906199735510198, guid: 51e20db8bb07f584686a5ad80d88a06b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14270,6 +14285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046760236488406036, guid: 3bcef9d0d34f6bf479728074badc892d,
+        type: 3}
+      propertyPath: <AlertGroupID>k__BackingField
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7046760236488406036, guid: 3bcef9d0d34f6bf479728074badc892d,
         type: 3}
