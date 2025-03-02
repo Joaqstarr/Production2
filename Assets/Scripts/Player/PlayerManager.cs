@@ -79,8 +79,7 @@ namespace Player
 
         private void Update()
         {
-            if (!PauseMenu.isPaused)
-            {
+            
                 if (_playerControls)
                 {
                     _movementInput = _playerControls.MovementInput;
@@ -92,7 +91,7 @@ namespace Player
                     HandleCrouching();
                     HandleSprinting();
                 }
-            }
+            
         }
 
         private void HandleMovement()
