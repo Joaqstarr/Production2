@@ -598,6 +598,7 @@ Transform:
   m_Children:
   - {fileID: 1711951855293395603}
   - {fileID: 983433977578481390}
+  - {fileID: 4907813137617248907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1961443674822077312
@@ -637,7 +638,7 @@ MonoBehaviour:
   <EnvLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 9
-  <LookPoint>k__BackingField: {fileID: 3096768771073675021}
+  <LookPoint>k__BackingField: {fileID: 4907813137617248907}
   <PatrolPoints>k__BackingField: []
   droneObject: {fileID: 4486140769441807585}
   <AlertGroupID>k__BackingField: 0
@@ -920,6 +921,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Weight: 1
   m_Effectors: []
+--- !u!1 &9018145536371003191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4907813137617248907}
+  m_Layer: 6
+  m_Name: Look Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4907813137617248907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018145536371003191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.262, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5778029950189064461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3477121779895024740
 PrefabInstance:
   m_ObjectHideFlags: 0
