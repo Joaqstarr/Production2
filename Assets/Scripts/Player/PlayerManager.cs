@@ -55,11 +55,13 @@ namespace Player
 
         private bool _isSprinting = false;
         private bool _isCrouching = false;
-
+        private bool _uncrouchOstructed = false;
+        
         private float _targetHeight;
         private float _initialCameraY;
         private float _targetCameraY;
 
+        
         private void Awake()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -112,7 +114,7 @@ namespace Player
 
             float speed = movementSettings.walkSpeed;
 
-            if (_isCrouching)
+            if (_isCrouching || _uncrouchOstructed)
             {
                 speed = crouchSettings.crouchSpeed;
             }
@@ -141,6 +143,17 @@ namespace Player
 
         private void HandleCrouching()
         {
+            if (_uncrouchOstructed)
+            {
+                if (!IsObstructedAbove())
+                {
+                    _uncrouchOstructed = false;
+                }
+                else
+                {
+                    return;
+                }
+            }
 
 
             float currentHeight = _characterController.height;
@@ -205,14 +218,35 @@ namespace Player
 
         private void OnCrouchPressed()
         {
-            
 
-            _isCrouching = !_isCrouching;
+            if (_isCrouching)
+            {
+                _isCrouching = false;
+
+                if (IsObstructedAbove())
+                {
+                    _uncrouchOstructed = true;
+                }
+            }
+            else
+            {
+                _isCrouching = true;
+                
+            }
+            
             _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
 
             _targetCameraY = _isCrouching
                 ? _initialCameraY - crouchSettings.cameraCrouchOffset
                 : _initialCameraY;
+        }
+        private bool IsObstructedAbove()
+        {
+            float checkHeight = crouchSettings.standingHeight - crouchSettings.crouchHeight;
+            Vector3 start = transform.position + Vector3.up * crouchSettings.crouchHeight;
+            Vector3 end = transform.position + Vector3.up * crouchSettings.standingHeight;
+
+            return Physics.CheckCapsule(start, end, _characterController.radius, groundLayer);
         }
 
         private void OnDisable()
