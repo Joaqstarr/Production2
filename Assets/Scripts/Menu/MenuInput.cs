@@ -5,23 +5,25 @@ using UnityEngine.InputSystem;
 
 public class MenuInput : MonoBehaviour
 {
-    public static MenuInput instance;
-    public bool MenuOpenCloseInput { get; private set; }
+    public bool IsMenuOpen { get; private set; }
     private PlayerInput _playerInput;
-    private InputAction _menuOpenCloseAction;
+    
+    public delegate void PauseDelegate(bool isOpen);
+    public static PauseDelegate OnTogglePause;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        _playerInput = GetComponent<PlayerInput>();
-        _menuOpenCloseAction = _playerInput.actions["MenuOpenClose"];
+
     }
 
-    private void Update()
+
+
+    private void OnToggleMenu(InputValue value)
     {
-        MenuOpenCloseInput = _menuOpenCloseAction.WasPressedThisFrame();
+
+        IsMenuOpen = !IsMenuOpen;
+
+
+        OnTogglePause?.Invoke(IsMenuOpen);
     }
 }

@@ -316,6 +316,7 @@ MonoBehaviour:
   _playerControls: {fileID: 0}
   _laserPointer: {fileID: 0}
   _playerManager: {fileID: 0}
+  _resumeFirst: {fileID: 7599327290174595323}
 --- !u!1 &3278389966095436857
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ namespace Player
         public ButtonDelegate InteractPressed;
         void OnLook(InputValue input)
         {
+            if (Time.timeScale == 0)
+            {
+                LookInput = Vector2.zero;
+                return;
+            }
             LookInput = input.Get<Vector2>();
         }
 

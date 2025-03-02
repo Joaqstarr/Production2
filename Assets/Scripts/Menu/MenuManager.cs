@@ -1,3 +1,4 @@
+using System;
 using Player;
 using Player.LaserPointer;
 using System.Collections;
@@ -19,29 +20,37 @@ public class MenuManager : MonoBehaviour
         _mainMenuCanvasGO.SetActive(false);
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (MenuInput.instance.MenuOpenCloseInput)
+        MenuInput.OnTogglePause += OnTogglePause;
+    }
+
+    private void OnTogglePause(bool isopen)
+    {
+        if (isopen)
         {
-            if (!isPaused)
-            {
-                Pause();
-            }
-            else
-            {
-                Unpause();
-            }
+            Pause();
+        }
+        else
+        {
+            Unpause();
         }
     }
+
+    private void OnDisable()
+    {
+        MenuInput.OnTogglePause -= OnTogglePause;
+
+    }
+
+    
     #region Pause/Unpause Functions
 
     public void Pause()
     {
         isPaused = true;
         Time.timeScale = 0f;
-        _playerControls.enabled = false;
-        _laserPointer.enabled = false;
-        _playerManager.enabled = false;
+
         OpenMenu();
     }
 
@@ -49,9 +58,7 @@ public class MenuManager : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
-        _playerControls.enabled = true;
-        _laserPointer.enabled = true;
-        _playerManager.enabled = true;
+
         CloseAllMenus();
     }
 
@@ -63,12 +70,15 @@ public class MenuManager : MonoBehaviour
     {
         _mainMenuCanvasGO.SetActive(true);
         EventSystem.current.SetSelectedGameObject(_resumeFirst);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void CloseAllMenus()
     {
         _mainMenuCanvasGO.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     #endregion
