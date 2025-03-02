@@ -5,15 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject _mainMenuCanvasGO;
     private bool isPaused;
-    [SerializeField] private PlayerControls _playerControls;
-    [SerializeField] private LaserPointer _laserPointer;
-    [SerializeField] private PlayerManager _playerManager;
-    [SerializeField] private GameObject _resumeFirst;
+    [FormerlySerializedAs("_resumeFirst")] [SerializeField] private GameObject _firstSelectedButton;
 
     private void Start()
     {
@@ -69,7 +67,7 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu()
     {
         _mainMenuCanvasGO.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(_resumeFirst);
+        EventSystem.current.SetSelectedGameObject(_firstSelectedButton);
         Cursor.lockState = CursorLockMode.None;
     }
 
