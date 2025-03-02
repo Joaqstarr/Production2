@@ -98,7 +98,6 @@ namespace Player.Animation
 
         private void FinishReady()
         {
-            Debug.Log("Finish Ready!!");
             CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.ReadyGame);
         }
     }

@@ -3,23 +3,40 @@ using Player;
 using Player.LaserPointer;
 using System.Collections;
 using System.Collections.Generic;
+using Menu;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject _mainMenuCanvasGO;
-    public GameObject _settingsMenuCanvasGO;
+    public CanvasGroup _menuCanvasGroup;
+    public SubMenu _pauseScreenSubmenu;
+    public SubMenu _settingsMenuSubmenu;
+    
     private bool isPaused;
-    [FormerlySerializedAs("_resumeFirst")] [SerializeField] private GameObject _firstSelectedButton;
 
     private void Start()
     {
-        _mainMenuCanvasGO.SetActive(false);
-        _settingsMenuCanvasGO.SetActive(false);
+        DisableCanvasGroup(_menuCanvasGroup);
+
+        _pauseScreenSubmenu.CloseMenu();
+        _settingsMenuSubmenu.CloseMenu();
     }
 
+    private static void DisableCanvasGroup(CanvasGroup group)
+    {
+        group.alpha = 0;
+        group.blocksRaycasts = false;
+        group.interactable = false;
+    }
+    private static void EnableCanvasGroup(CanvasGroup group)
+    {
+        group.alpha = 1;
+        group.blocksRaycasts = true;
+        group.interactable = true;
+    }
     private void OnEnable()
     {
         MenuInput.OnTogglePause += OnTogglePause;
@@ -29,11 +46,11 @@ public class MenuManager : MonoBehaviour
     {
         if (isPaused)
         {
-            Pause();
+            Unpause();
         }
         else
         {
-            Unpause();
+            Pause();
         }
     }
 
@@ -68,24 +85,29 @@ public class MenuManager : MonoBehaviour
 
     private void OpenMenu()
     {
-        _mainMenuCanvasGO.SetActive(true);
-        _settingsMenuCanvasGO.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(_firstSelectedButton);
+        EnableCanvasGroup(_menuCanvasGroup);
+        _settingsMenuSubmenu.CloseMenu();
+        _pauseScreenSubmenu.OpenMenu();
+
         Cursor.lockState = CursorLockMode.None;
     }
 
     private void OpenSettingsMenu()
     {
-        _mainMenuCanvasGO.SetActive(false);
-        _settingsMenuCanvasGO.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(_firstSelectedButton);
+        EnableCanvasGroup(_menuCanvasGroup);
+        _pauseScreenSubmenu.CloseMenu();
+        _settingsMenuSubmenu.OpenMenu();
+        
+
         Cursor.lockState = CursorLockMode.None;
     }
 
     private void CloseAllMenus()
     {
-        _mainMenuCanvasGO.SetActive(false);
-        _settingsMenuCanvasGO.SetActive(false);
+        DisableCanvasGroup(_menuCanvasGroup);
+        _settingsMenuSubmenu.CloseMenu();
+        _pauseScreenSubmenu.OpenMenu();
+        
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -111,6 +133,12 @@ public class MenuManager : MonoBehaviour
     public void OnSettingsBackPress()
     {
         OpenMenu();
+    }
+
+    public void OnRestartPressed()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
