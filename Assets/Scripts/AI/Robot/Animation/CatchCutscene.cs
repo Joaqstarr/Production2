@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using World;
 
 namespace AI.Robot.Animation
 {
@@ -25,7 +26,7 @@ namespace AI.Robot.Animation
             if (other.CompareTag("Player") && !isPlayingCutscene)
             {
                 isPlayingCutscene = true;
-                StartCoroutine(PlayCatchCutscene(other.transform));
+                 StartCoroutine(PlayCatchCutscene(other.transform));
             }
         }
 
@@ -36,6 +37,7 @@ namespace AI.Robot.Animation
             transform.forward = (player.transform.position - transform.position).normalized;
 
             OnCaughtCutscneTriggered?.Invoke(transform);
+            CutsceneManager.StartCutscene(CutsceneManager.Cutscenes.Caught, transform);
 
 
             
@@ -55,6 +57,7 @@ namespace AI.Robot.Animation
 
         public void ReloadScene()
         {
+            CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Caught);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

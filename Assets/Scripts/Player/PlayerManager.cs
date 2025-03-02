@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
 using Player.LaserPointer;
+using World;
 
 namespace Player
 {
@@ -79,7 +80,7 @@ namespace Player
 
         private void Update()
         {
-            if (_playerControls)
+            if (!CutsceneManager.IsInCutscene&& _playerControls)
             {
                 _movementInput = _playerControls.MovementInput;
                 _lookInput = _playerControls.LookInput;
