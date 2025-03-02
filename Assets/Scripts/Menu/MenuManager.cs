@@ -10,12 +10,14 @@ using UnityEngine.Serialization;
 public class MenuManager : MonoBehaviour
 {
     public GameObject _mainMenuCanvasGO;
+    public GameObject _settingsMenuCanvasGO;
     private bool isPaused;
     [FormerlySerializedAs("_resumeFirst")] [SerializeField] private GameObject _firstSelectedButton;
 
     private void Start()
     {
         _mainMenuCanvasGO.SetActive(false);
+        _settingsMenuCanvasGO.SetActive(false);
     }
 
     private void OnEnable()
@@ -67,6 +69,15 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu()
     {
         _mainMenuCanvasGO.SetActive(true);
+        _settingsMenuCanvasGO.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(_firstSelectedButton);
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OpenSettingsMenu()
+    {
+        _mainMenuCanvasGO.SetActive(false);
+        _settingsMenuCanvasGO.SetActive(true);
         EventSystem.current.SetSelectedGameObject(_firstSelectedButton);
         Cursor.lockState = CursorLockMode.None;
     }
@@ -74,6 +85,7 @@ public class MenuManager : MonoBehaviour
     private void CloseAllMenus()
     {
         _mainMenuCanvasGO.SetActive(false);
+        _settingsMenuCanvasGO.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -86,14 +98,19 @@ public class MenuManager : MonoBehaviour
         Unpause();
     }
 
-    public void OnMainMenuPress()
+    public void OnSettingsMenuPress()
     {
-
+        OpenSettingsMenu();
     }
 
     public void OnQuitPress()
     {
         Application.Quit();
+    }
+
+    public void OnSettingsBackPress()
+    {
+        OpenMenu();
     }
 }
 
