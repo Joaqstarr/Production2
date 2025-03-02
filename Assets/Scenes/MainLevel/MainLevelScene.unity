@@ -98,7 +98,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: e6f2c418a5b4fcc4db9a94cd5e1e6941,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 4bf584f92367f6749bd15352906f191a,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d6076283b3ff28744a0a3c2ba1044b06,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -65330,7 +65330,7 @@ Transform:
   m_GameObject: {fileID: 1521920887}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.75, y: 1.25, z: -10.583334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65348,7 +65348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 1000000
+  m_Intensity: 1500000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -65361,8 +65361,8 @@ MonoBehaviour:
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
-  m_ShapeWidth: 11.166668
-  m_ShapeHeight: 92.83513
+  m_ShapeWidth: 15.5
+  m_ShapeHeight: 62.33333
   m_AspectRatio: 1
   m_ShapeRadius: 0.025
   m_SoftnessScale: 1
@@ -65470,7 +65470,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 307.0536
+  m_Intensity: 494.18478
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -65511,11 +65511,11 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 11.166668, y: 92.83513}
+  m_AreaSize: {x: 15.5, y: 62.33333}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 46.752155}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 32.115784}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
