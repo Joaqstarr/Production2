@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PatrolPoints>k__BackingField: []
   droneObject: {fileID: 4486140769441807585}
+  <AlertGroupID>k__BackingField: 0
   droneRotation: 15
   <_lookRadius>k__BackingField: 5
   <_lookTransform>k__BackingField: {fileID: 983433977578481390}
@@ -664,7 +665,8 @@ AudioSource:
   m_GameObject: {fileID: 6130120069349861783}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8642045298374210302, guid: c814349581a775c40ab2ba0de8a21fcf,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

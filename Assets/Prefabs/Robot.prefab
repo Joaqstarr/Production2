@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89ec6da896d4fc9a496d1c3f314956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AlarmGroupID>k__BackingField: 0
 --- !u!114 &5838792011928702111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +716,7 @@ MonoBehaviour:
   footstepSounds:
   - {fileID: 8300000, guid: de36105a5e59ab1479082e120cc33dd7, type: 3}
   - {fileID: 8300000, guid: 6b70fcdd2459b3949aa780f81c07d09b, type: 3}
+  crunchSounds: []
 --- !u!82 &1515693553862007224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -724,7 +726,8 @@ AudioSource:
   m_GameObject: {fileID: 6877777990115589644}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6162107018179650063, guid: c814349581a775c40ab2ba0de8a21fcf,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.5
