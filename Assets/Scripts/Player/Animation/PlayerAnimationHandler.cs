@@ -45,7 +45,6 @@ namespace Player.Animation
 
         private void ToggleCrouch()
         {
-            Debug.Log("Crouch toggle");
             float time = _crouchTransitionSpeed;
                 
             //subtract current time from time to apply

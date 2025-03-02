@@ -14,6 +14,9 @@ namespace Player
         public ButtonDelegate OnLaserPressed;
         public ButtonDelegate OnLaserUnpressed;
 
+        public bool IsCrouching { get; private set; } = false;
+        public ButtonDelegate OnCrouchPressed;
+
         public ButtonDelegate InteractPressed;
         void OnLook(InputValue input)
         {
@@ -52,6 +55,19 @@ namespace Player
         void OnInteract()
         {
             InteractPressed?.Invoke();
+        }
+
+        void OnCrouch(InputValue input)
+        {
+            bool isCrouching = IsCrouching;
+            
+            IsCrouching = input.isPressed;
+            
+            if (input.isPressed != isCrouching)
+            {
+                OnCrouchPressed?.Invoke();
+            }
+
         }
     }
 }

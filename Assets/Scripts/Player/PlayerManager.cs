@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -59,12 +60,19 @@ namespace Player
         private float _initialCameraY;
         private float _targetCameraY;
 
-        private void Start()
+        private void Awake()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+
             _playerControls = GetComponent<PlayerControls>();
             _characterController = GetComponent<CharacterController>();
             _animator = GetComponentInChildren<Animator>();
-            Cursor.lockState = CursorLockMode.Locked;
+
+
+        }
+
+        private void Start()
+        {
 
             _initialCameraY = cameraTransform.localPosition.y;
             _targetCameraY = _initialCameraY;
@@ -133,20 +141,7 @@ namespace Player
 
         private void HandleCrouching()
         {
-            if (Keyboard.current.cKey.wasPressedThisFrame)
-            {
-                if (_isSprinting)
-                {
-                    _isSprinting = false;
-                }
 
-                _isCrouching = !_isCrouching;
-                _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
-
-                _targetCameraY = _isCrouching
-                    ? _initialCameraY - crouchSettings.cameraCrouchOffset
-                    : _initialCameraY;
-            }
 
             float currentHeight = _characterController.height;
             _characterController.height = Mathf.Lerp(currentHeight, _targetHeight,
@@ -187,7 +182,7 @@ namespace Player
 
         private void HandleJumping()
         {
-            Debug.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance, Color.red);
+            //Debug.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance, Color.red);
 
             _isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, groundCheckDistance, groundLayer);
 
@@ -196,18 +191,34 @@ namespace Player
                 _currentGravity = -2f;
             }
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame && _isGrounded)
+            /*if (Keyboard.current.spaceKey.wasPressedThisFrame && _isGrounded)
             {
                 _currentGravity = Mathf.Sqrt(jumpSettings.jumpHeight * -2f * gravitySettings.gravity);
-            }
+            }*/
         }
 
         private void OnEnable()
         {
             AudioManager.OnFootstep += PlayFootstepEffect; 
+            _playerControls.OnCrouchPressed += OnCrouchPressed;
         }
+
+        private void OnCrouchPressed()
+        {
+            
+
+            _isCrouching = !_isCrouching;
+            _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
+
+            _targetCameraY = _isCrouching
+                ? _initialCameraY - crouchSettings.cameraCrouchOffset
+                : _initialCameraY;
+        }
+
         private void OnDisable()
         {
+            _playerControls.OnCrouchPressed -= OnCrouchPressed;
+
             AudioManager.OnFootstep -= PlayFootstepEffect;
         }
         private void PlayFootstepEffect()
