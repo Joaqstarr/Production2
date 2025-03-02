@@ -142,6 +142,11 @@ namespace Player
                     _isSprinting = false;
                 }
 
+                if (_isCrouching && IsObstructedAbove())
+                {
+                    return;
+                }
+
                 _isCrouching = !_isCrouching;
                 _targetHeight = _isCrouching ? crouchSettings.CrouchColliderHeight : crouchSettings.StandColliderHeight;
 
@@ -167,6 +172,15 @@ namespace Player
                 _vignette.intensity.value =
                     Mathf.Lerp(_vignette.intensity.value, targetVignetteIntensity, Time.deltaTime * 5f);
             }
+        }
+
+        private bool IsObstructedAbove()
+        {
+            float checkHeight = crouchSettings.standingHeight - crouchSettings.crouchHeight;
+            Vector3 start = transform.position + Vector3.up * crouchSettings.crouchHeight;
+            Vector3 end = transform.position + Vector3.up * crouchSettings.standingHeight;
+
+            return Physics.CheckCapsule(start, end, _characterController.radius, groundLayer);
         }
 
         private void HandleSprinting()
