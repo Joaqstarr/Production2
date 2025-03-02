@@ -634,6 +634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef966ce6a014bab8d61b691baba8c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EnvLayers>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 9
+  <LookPoint>k__BackingField: {fileID: 3096768771073675021}
   <PatrolPoints>k__BackingField: []
   droneObject: {fileID: 4486140769441807585}
   <AlertGroupID>k__BackingField: 0

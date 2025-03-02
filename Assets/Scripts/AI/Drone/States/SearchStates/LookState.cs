@@ -17,8 +17,12 @@ namespace AI.Drone.States.SearchStates
         {
             base.OnEnterState();
             _previousAgentSpeed = _drone.Agent.speed;
-            _drone.Agent.SetDestination(_drone.transform.position);
-            _drone.Agent.speed = 1;
+            if (_drone)
+            {
+                _drone.Agent.SetDestination(_drone.transform.position);
+                
+                _drone.Agent.speed = 1;
+            }
 
         }
 

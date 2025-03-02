@@ -9,6 +9,10 @@ namespace AI.Drone
     [RequireComponent(typeof(NavMeshAgent))]
     public class DroneBrain : MonoBehaviour
     {
+        [field: SerializeField]
+        public LayerMask EnvLayers{get; private set;}
+        [field: SerializeField]
+        public Transform LookPoint { get; private set; }
         private DroneStateMachineManager _droneStateMachine;
 
         [field: SerializeField]

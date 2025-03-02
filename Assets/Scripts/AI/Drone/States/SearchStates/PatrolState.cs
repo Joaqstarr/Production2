@@ -28,7 +28,10 @@ namespace AI.Drone.States.SearchStates
         {
             base.OnEnterState();
             Transform nextPoint = GetRandomPatrolPoint();
-            _drone.Agent.SetDestination(nextPoint.position);
+            if (nextPoint)
+            {
+                _drone.Agent.SetDestination(nextPoint.position);
+            }
             
         }
 
