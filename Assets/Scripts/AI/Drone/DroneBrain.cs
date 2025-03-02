@@ -17,6 +17,8 @@ namespace AI.Drone
         public NavMeshAgent Agent { get; private set; }
 
         [SerializeField] private Transform droneObject;
+        [field: SerializeField] public int AlertGroupID { get; private set; } = 0;
+        
         public float droneRotation = 15f;
 
         private bool _hasMoved = false;

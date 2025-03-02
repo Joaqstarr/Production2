@@ -10,6 +10,7 @@ namespace AI.Robot
     {
         public RobotStateMachineManager RobotStateMachine {get; private set;}
 
+        [field: SerializeField] public int AlarmGroupID { get; private set; } = 0;
         public NavMeshAgent Agent {get; private set;}
         private void Awake()
         {

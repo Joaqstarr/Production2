@@ -26,7 +26,7 @@ namespace AI.Drone.States
         {
             //_drone.Agent.SetDestination(notification.Position);
             
-            SenseNotificationSubsystem.TriggerAlarmNotification(notification.Position);
+            SenseNotificationSubsystem.TriggerAlarmNotification(notification.Position, _drone.AlertGroupID);
 
             _drone._lookTransform.position = notification.Position;
 

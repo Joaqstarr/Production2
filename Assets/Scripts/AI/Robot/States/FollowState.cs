@@ -8,7 +8,7 @@ namespace AI.Robot.States
 
         public FollowState(RobotBrain robotBrain, RobotStateMachineManager robotStateMachine) : base(robotBrain, robotStateMachine)
         {
-            _alarmListener = new SenseAlarmListener();
+            _alarmListener = new SenseAlarmListener(robotBrain.AlarmGroupID);
 
         }
 

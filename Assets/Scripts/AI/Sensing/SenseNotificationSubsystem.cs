@@ -54,12 +54,13 @@ namespace AI.Sensing
             OnNotification?.Invoke(context);
         }
 
-        public static void TriggerAlarmNotification(Vector3 location)
+        public static void TriggerAlarmNotification(Vector3 location, int group)
         {
             SenseNotificationContext context = new SenseNotificationContext
             {
                 Type = SenseNotificationContext.NotificationType.Alarm,
                 Position = location,
+                Strength = group
             };
             OnNotification?.Invoke(context);
         }
