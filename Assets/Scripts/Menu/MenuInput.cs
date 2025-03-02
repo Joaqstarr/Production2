@@ -7,7 +7,7 @@ public class MenuInput : MonoBehaviour
 {
     public static MenuInput instance;
     public bool MenuOpenCloseInput { get; private set; }
-    private MenuInput _menuInput;
+    private PlayerInput _playerInput;
     private InputAction _menuOpenCloseAction;
 
     private void Awake()
@@ -16,8 +16,8 @@ public class MenuInput : MonoBehaviour
         {
             instance = this;
         }
-        _menuInput = GetComponent<PlayerInput>();
-        _menuOpenCloseAction = _menuInput.action["MenuOpenClose"];
+        _playerInput = GetComponent<PlayerInput>();
+        _menuOpenCloseAction = _playerInput.actions["MenuOpenClose"];
     }
 
     private void Update()

@@ -1,17 +1,22 @@
+using Player;
+using Player.LaserPointer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject _mainMenuCanvasGO;
-    public GameObject _settingsMenuCanvasGO;
     private bool isPaused;
+    [SerializeField] private PlayerControls _playerControls;
+    [SerializeField] private LaserPointer _laserPointer;
+    [SerializeField] private PlayerManager _playerManager;
+    [SerializeField] private GameObject _resumeFirst;
 
-    void Start()
+    private void Start()
     {
         _mainMenuCanvasGO.SetActive(false);
-        _settingsMenuCanvasGO.SetActive(false);
     }
 
     private void Update()
@@ -34,6 +39,9 @@ public class MenuManager : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0f;
+        _playerControls.enabled = false;
+        _laserPointer.enabled = false;
+        _playerManager.enabled = false;
         OpenMenu();
     }
 
@@ -41,6 +49,9 @@ public class MenuManager : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
+        _playerControls.enabled = true;
+        _laserPointer.enabled = true;
+        _playerManager.enabled = true;
         CloseAllMenus();
     }
 
@@ -51,15 +62,30 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu()
     {
         _mainMenuCanvasGO.SetActive(true);
-        _settingsMenuCanvasGO.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(_resumeFirst);
     }
 
     private void CloseAllMenus()
     {
         _mainMenuCanvasGO.SetActive(false);
-        _settingsMenuCanvasGO.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     #endregion
+
+    public void OnResumePress()
+    {
+        Unpause();
+    }
+
+    public void OnMainMenuPress()
+    {
+
+    }
+
+    public void OnQuitPress()
+    {
+        Application.Quit();
+    }
 }
 
