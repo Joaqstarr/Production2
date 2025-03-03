@@ -19,16 +19,12 @@ namespace Player.Animation
         private Animator _animator;
 
         private CinemachineVirtualCamera _virtualCamera;
-        // Start is called before the first frame update
-        void Start()
-        {
-            _animator = GetComponentInChildren<Animator>();
-            _virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
 
-        }
 
         private void OnEnable()
         {
+            _animator = GetComponentInChildren<Animator>();
+            _virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
             CutsceneManager.OnPlayCutscene += OnPlayCutscene;
             CutsceneManager.OnEndCutscene += OnEndCutscene;
         }

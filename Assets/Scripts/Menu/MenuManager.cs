@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
     public CanvasGroup _menuCanvasGroup;
     public SubMenu _pauseScreenSubmenu;
     public SubMenu _settingsMenuSubmenu;
+    public SubMenu _titleScreenMenu;
+    
+    public delegate void MenuDelegate();
+    public static MenuDelegate OnGameStart;
     
     private bool isPaused;
 
@@ -23,6 +27,24 @@ public class MenuManager : MonoBehaviour
 
         _pauseScreenSubmenu.CloseMenu();
         _settingsMenuSubmenu.CloseMenu();
+        OpenTitleScreen();
+    }
+
+    public void OpenTitleScreen()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1f;
+
+        DisableCanvasGroup(_menuCanvasGroup);
+        _titleScreenMenu.OpenMenu();
+    }
+
+    public void StartGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
+        _titleScreenMenu.CloseMenu();
+        OnGameStart?.Invoke();
     }
 
     private static void DisableCanvasGroup(CanvasGroup group)
@@ -44,6 +66,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnTogglePause()
     {
+        if (_titleScreenMenu.IsOpen()) return;
+        
         if (isPaused)
         {
             Unpause();
@@ -76,7 +100,7 @@ public class MenuManager : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
 
-        CloseAllMenus();
+        CloseAllPauseMenus();
     }
 
     #endregion
@@ -102,7 +126,7 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void CloseAllMenus()
+    private void CloseAllPauseMenus()
     {
         DisableCanvasGroup(_menuCanvasGroup);
         _settingsMenuSubmenu.CloseMenu();

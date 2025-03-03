@@ -29,5 +29,10 @@ namespace Menu
             _menuCanvasGroup.blocksRaycasts = false;
             _menuCanvasGroup.interactable = false;
         }
+
+        public bool IsOpen()
+        {
+            return _menuCanvasGroup.alpha > 0;
+        }
     }
 }

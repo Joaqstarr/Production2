@@ -37,6 +37,12 @@ namespace Player.Animation
             
             CutsceneManager.OnPlayCutscene += OnPlayCutscene;
             CutsceneManager.OnEndCutscene += OnEndCutscene;
+            MenuManager.OnGameStart += OnGameStart;
+        }
+
+        private void OnGameStart()
+        {
+            CutsceneManager.StartCutscene(CutsceneManager.Cutscenes.ReadyGame, transform);
         }
 
         private void OnEndCutscene(CutsceneManager.Cutscenes cutscene)
@@ -66,6 +72,8 @@ namespace Player.Animation
         {
             CutsceneManager.OnPlayCutscene -= OnPlayCutscene;
             CutsceneManager.OnEndCutscene -= OnEndCutscene;
+            MenuManager.OnGameStart -= OnGameStart;
+
         }
 
         void PlayReadyGameCutscene()
