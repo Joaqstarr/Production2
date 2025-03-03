@@ -1,4 +1,5 @@
 using System.Collections;
+using Menu;
 using Player;
 using Player.Animation;
 using UnityEngine;
@@ -55,8 +56,15 @@ namespace AI.Robot.Animation
             isPlayingCutscene = false;
         }
 
-        public void ReloadScene()
+        IEnumerator ReloadScene()
         {
+            if (Fader.Instance)
+            {
+                Fader.Instance.CutToBlack();
+            }
+
+            yield return new WaitForSeconds(2f);
+            
             CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Caught);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

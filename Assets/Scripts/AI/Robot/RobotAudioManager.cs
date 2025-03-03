@@ -44,16 +44,15 @@ public class RobotAudioManager : MonoBehaviour
         OnFootstep?.Invoke();
     }
 
-    public void PlayCrunch(int index1, int index2)
+    public void PlayCrunch()
     {
-        if (footstepSounds.Length > 1 && index1 >= 0 && index1 < footstepSounds.Length && index2 >= 0 && index2 < footstepSounds.Length)
-        {
-            AudioClip clip1 = footstepSounds[index1];
-            AudioClip clip2 = footstepSounds[index2];
+
+            AudioClip clip1 = crunchSounds[0];
+            AudioClip clip2 = crunchSounds[1];
 
             audioSource.PlayOneShot(clip1);
             audioSource.PlayOneShot(clip2);
-        }
+        
     }
 
     public void OnStompHit()
