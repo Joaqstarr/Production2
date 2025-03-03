@@ -61,7 +61,7 @@ namespace Utility.StateMachine
         protected void SwitchState(HierarchalStateMachine newState)
         {
             if (_currentState == newState) return;
-            if (_currentState != null)
+            if (_currentState != null && newState != null)
             {
                 _currentState.OnExitState();
             }

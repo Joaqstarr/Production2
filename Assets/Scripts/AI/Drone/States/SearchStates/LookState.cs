@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using World;
 
 namespace AI.Drone.States.SearchStates
 {
@@ -32,6 +33,10 @@ namespace AI.Drone.States.SearchStates
 
             Vector3 dir = _drone._lookTransform.position - _drone.transform.position;
 
+            if (CutsceneManager.IsInCutscene)
+            {
+                dir *= -1;
+            }
             _drone.Agent.SetDestination(_drone.transform.position + dir.normalized);
             
             if (_searchState.TimeoutTimer <= 0)
