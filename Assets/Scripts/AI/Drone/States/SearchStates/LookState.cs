@@ -21,7 +21,7 @@ namespace AI.Drone.States.SearchStates
             {
                 _drone.Agent.SetDestination(_drone.transform.position);
                 
-                _drone.Agent.speed = 1;
+                _drone.Agent.speed = 3;
             }
 
         }
