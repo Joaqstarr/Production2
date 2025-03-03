@@ -585,7 +585,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1db721057acea724eb1e7c208411f20a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6460113751309063115}
+      addedObject: {fileID: 4668166859519862543}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1db721057acea724eb1e7c208411f20a,
         type: 3}
       insertIndex: -1
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efe930c054f4887ad1444dc6ce47233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6460113751309063115
+--- !u!114 &4668166859519862543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6877777990115589644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c88d02c0894644ea467f21b789efcf, type: 3}
+  m_Script: {fileID: 11500000, guid: c57ebce6baef5d645be065a27274b78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idleSounds:
@@ -716,7 +716,10 @@ MonoBehaviour:
   footstepSounds:
   - {fileID: 8300000, guid: de36105a5e59ab1479082e120cc33dd7, type: 3}
   - {fileID: 8300000, guid: 6b70fcdd2459b3949aa780f81c07d09b, type: 3}
-  crunchSounds: []
+  crunchSounds:
+  - {fileID: 8300000, guid: bd5b3649a3142fb4f84d739672d81c44, type: 3}
+  - {fileID: 8300000, guid: 25c8b4ade37ada248a937eca5d9bc616, type: 3}
+  crushMouse: {fileID: 8300000, guid: e40db94fbfc4af94796e71fd63e00f6c, type: 3}
 --- !u!82 &1515693553862007224
 AudioSource:
   m_ObjectHideFlags: 0
