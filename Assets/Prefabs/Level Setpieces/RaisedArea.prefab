@@ -5602,7 +5602,7 @@ PrefabInstance:
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.722
+      value: 8.431
       objectReference: {fileID: 0}
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
@@ -5612,7 +5612,7 @@ PrefabInstance:
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.58
+      value: 3.433
       objectReference: {fileID: 0}
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
@@ -5653,6 +5653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MouseSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333946718573174904, guid: 54e03dfb4f235c047a4bd90690e2870d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.848
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7964,7 +7969,7 @@ PrefabInstance:
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.495
+      value: 4.323
       objectReference: {fileID: 0}
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
@@ -7974,7 +7979,7 @@ PrefabInstance:
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.004
+      value: -4.162
       objectReference: {fileID: 0}
     - target: {fileID: 1992865899505741987, guid: 54e03dfb4f235c047a4bd90690e2870d,
         type: 3}
