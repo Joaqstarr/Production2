@@ -1096,6 +1096,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cd42ac464ba41344873f12ed577e90f, type: 3}
   - {fileID: 8300000, guid: dcbf53d14ae12e64c9f02e7b33c66c4b, type: 3}
   - {fileID: 8300000, guid: 6af503bf059f0504d880e31149f2f1d7, type: 3}
+  laserClick: {fileID: 8300000, guid: facc7011466598742a9415275ad5d557, type: 3}
+  landSound: {fileID: 8300000, guid: 54c7a9052564b88408327b3d49db7a56, type: 3}
 --- !u!82 &3216743092235445643
 AudioSource:
   m_ObjectHideFlags: 0

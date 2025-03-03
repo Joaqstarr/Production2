@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollingSound: {fileID: 8300000, guid: df3c61b2204c6a749a029c8ed20374c7, type: 3}
+  alertSound: {fileID: 8300000, guid: 81fd09c0763984b4a876229754b01a77, type: 3}
 --- !u!82 &6015019567282018700
 AudioSource:
   m_ObjectHideFlags: 0

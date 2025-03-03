@@ -1209,6 +1209,16 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 6144199769222131012, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
         type: 3}
+      propertyPath: landSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 54c7a9052564b88408327b3d49db7a56, type: 3}
+    - target: {fileID: 6144199769222131012, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
+        type: 3}
+      propertyPath: laserClick
+      value: 
+      objectReference: {fileID: 8300000, guid: facc7011466598742a9415275ad5d557, type: 3}
+    - target: {fileID: 6144199769222131012, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
+        type: 3}
       propertyPath: stepDustEffect
       value: 
       objectReference: {fileID: 404416937}
