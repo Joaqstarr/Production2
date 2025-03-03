@@ -4195,6 +4195,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navmeshes
       objectReference: {fileID: 0}
+    - target: {fileID: 1449055559434997366, guid: 51bd3a4e4ee88674eb860313d3e209e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1715429996058196319, guid: 51bd3a4e4ee88674eb860313d3e209e4,
         type: 3}
       propertyPath: m_Size.x
@@ -6100,7 +6105,7 @@ PrefabInstance:
     - target: {fileID: 5058604901380674176, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5954450784012120127, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
