@@ -18,6 +18,14 @@ namespace Player
         public ButtonDelegate OnCrouchPressed;
 
         public ButtonDelegate InteractPressed;
+
+        private float _lookSensitivity = 1f;
+
+        private void Start()
+        {
+            _lookSensitivity = PlayerPrefs.GetFloat("Sensitivity", 1);
+        }
+
         void OnLook(InputValue input)
         {
             if (Time.timeScale == 0)
@@ -25,7 +33,13 @@ namespace Player
                 LookInput = Vector2.zero;
                 return;
             }
-            LookInput = input.Get<Vector2>();
+            LookInput = input.Get<Vector2>() * _lookSensitivity;
+        }
+
+        public void SetSensitivity(float newSensitivity)
+        {
+            _lookSensitivity = Mathf.Clamp(newSensitivity, 0.05f, 10);
+            PlayerPrefs.SetFloat("Sensitivity", _lookSensitivity);
         }
 
         void OnMove(InputValue input)
