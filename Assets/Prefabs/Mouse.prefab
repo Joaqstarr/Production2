@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8097146946207054403}
   - component: {fileID: 703280531174873370}
   - component: {fileID: 8476662062433919460}
-  - component: {fileID: -2655299605152172888}
+  - component: {fileID: 4808811796616929596}
   - component: {fileID: 6015019567282018700}
   - component: {fileID: 5333711857536429424}
   - component: {fileID: 4190254198817831850}
@@ -104,7 +104,7 @@ MonoBehaviour:
   _rotationSpeed: 600
   _maxLean: 20
   _leanSpeed: 10
---- !u!114 &-2655299605152172888
+--- !u!114 &4808811796616929596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,13 +113,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2140552202129194274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c88d02c0894644ea467f21b789efcf, type: 3}
+  m_Script: {fileID: 11500000, guid: ac01b179c8fe8064783bffca755928af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSounds: []
-  footstepSounds:
-  - {fileID: 8300000, guid: df3c61b2204c6a749a029c8ed20374c7, type: 3}
-  crunchSounds: []
+  rollingSound: {fileID: 8300000, guid: df3c61b2204c6a749a029c8ed20374c7, type: 3}
 --- !u!82 &6015019567282018700
 AudioSource:
   m_ObjectHideFlags: 0
