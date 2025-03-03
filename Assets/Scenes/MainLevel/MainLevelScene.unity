@@ -5400,6 +5400,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3988564884397818182, guid: f561a0437fc9a65469f283436b38fc0b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 178.894
+      objectReference: {fileID: 0}
     - target: {fileID: 4118278854721139774, guid: f561a0437fc9a65469f283436b38fc0b,
         type: 3}
       propertyPath: m_Layer
@@ -6105,7 +6110,7 @@ PrefabInstance:
     - target: {fileID: 5058604901380674176, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5954450784012120127, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
