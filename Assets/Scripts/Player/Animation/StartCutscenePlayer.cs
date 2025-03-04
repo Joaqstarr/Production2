@@ -11,6 +11,7 @@ namespace Player.Animation
         {
             CutsceneManager.StartCutscene(CutsceneManager.Cutscenes.StartGame, transform);
 
+            
         }
     }
 }
