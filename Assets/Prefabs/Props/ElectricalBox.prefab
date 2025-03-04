@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7842159972358238791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837689791802884386}
+  m_Layer: 0
+  m_Name: CutsceneTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &837689791802884386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842159972358238791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000003106892, y: -0.7071068, z: -0.7071068, w: 0.000003106892}
+  m_LocalPosition: {x: -0.35130548, y: -1.1568676, z: -1.660602}
+  m_LocalScale: {x: 1.801418, y: 1.8014178, z: 1.8014178}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 921439620795774349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &811533102084903526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,6 +121,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d73135fb9717f742879e7fe85767750,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 837689791802884386}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d73135fb9717f742879e7fe85767750,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6294902147672099953}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d73135fb9717f742879e7fe85767750,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1251171563228613440}
   m_SourcePrefab: {fileID: 100100000, guid: 3d73135fb9717f742879e7fe85767750, type: 3}
+--- !u!1 &541079427597004599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d73135fb9717f742879e7fe85767750,
+    type: 3}
+  m_PrefabInstance: {fileID: 811533102084903526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6294902147672099953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541079427597004599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.45, y: 0.6106452, z: 1}
+  m_Center: {x: 3.2271278e-13, y: -0.30132014, z: -1.4144792e-15}
+--- !u!114 &1251171563228613440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541079427597004599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e69d1d837a4e8e8675549a6557ab41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _uiInRangeText: Press E or Down Face Button to OVERRIDE
+  _doorHinge: {fileID: 5840383862806108710}
+  _openDoorEulers: {x: 281.2403, y: 90, z: 90}
+  _openTime: 0.2
+  _location: {fileID: 837689791802884386}
+--- !u!4 &921439620795774349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d73135fb9717f742879e7fe85767750,
+    type: 3}
+  m_PrefabInstance: {fileID: 811533102084903526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5840383862806108710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2716212482211936192, guid: 3d73135fb9717f742879e7fe85767750,
+    type: 3}
+  m_PrefabInstance: {fileID: 811533102084903526}
+  m_PrefabAsset: {fileID: 0}

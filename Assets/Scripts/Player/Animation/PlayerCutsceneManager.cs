@@ -16,6 +16,10 @@ namespace Player.Animation
         private static readonly int WinTrigger = Animator.StringToHash("Win");
 
 
+        public delegate void CutsceneEventDelegate();
+
+        public static CutsceneEventDelegate OnOpenElectricalBox;
+        
         [SerializeField]
         private float _distance = 0.8f;
         private Animator _animator;
@@ -118,6 +122,11 @@ namespace Player.Animation
         private void FinishReady()
         {
             CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.ReadyGame);
+        }
+
+        public void OpenElectrical()
+        {
+            OnOpenElectricalBox?.Invoke();
         }
     }
 }
