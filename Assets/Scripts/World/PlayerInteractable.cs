@@ -7,13 +7,15 @@ using UnityEngine.Events;
 
 public class PlayerInteractable : MonoBehaviour
 {
-
+    public static string InteractableText;
     public UnityEvent OnInteract;
+    [SerializeField] protected string _uiInRangeText;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            InteractableText = _uiInRangeText;
             other.GetComponent<PlayerControls>().InteractPressed += Interact;
             
         }
@@ -23,6 +25,10 @@ public class PlayerInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (InteractableText == _uiInRangeText)
+            {
+                InteractableText = "";
+            }
             other.GetComponent<PlayerControls>().InteractPressed -= Interact;
         }
     }
@@ -39,6 +45,9 @@ public class PlayerInteractable : MonoBehaviour
 
     virtual protected void PlayerInteractedWith()
     {
-        
+        if (InteractableText == _uiInRangeText)
+        {
+            InteractableText = "";
+        }
     }
 }

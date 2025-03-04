@@ -2580,34 +2580,16 @@ MonoBehaviour:
         materialPassIndex: 0
         materialPassName: DrawProcedural
         fetchColorBuffer: 0
---- !u!1 &1626015783 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1328956378376459800, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 499032173892868505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1626015793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2725880343301799138, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
     type: 3}
   m_PrefabInstance: {fileID: 499032173892868505}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626015783}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75494b8865dd0c74f97de2d01e1f0dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1626015799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626015783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd2a77f67b79564299844afcc9bdc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1626015812 stripped
@@ -2616,7 +2598,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 499032173892868505}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626015783}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c43bc8bd70009614b9e60ac0fca926af, type: 3}
@@ -3437,11 +3419,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1328956378376459800, guid: bbcbb2e0b0b7e254086b6d112608fd0c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626015799}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbcbb2e0b0b7e254086b6d112608fd0c, type: 3}
 --- !u!1001 &2718338989116840475
 PrefabInstance:
@@ -4802,11 +4780,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 2421533134374308207, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2860267073840596302, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4931,11 +4904,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -65.773
-      objectReference: {fileID: 0}
-    - target: {fileID: 5058604901380674176, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5954450784012120127, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
