@@ -13,8 +13,9 @@ namespace Player.Animation
         private static readonly int CaughtTrigger = Animator.StringToHash("Caught");
         private static readonly int StartTrigger = Animator.StringToHash("TriggerStartScreen");
         private static readonly int ReadyTrigger = Animator.StringToHash("OnStartGame");
+        private static readonly int WinTrigger = Animator.StringToHash("Win");
 
-        
+
         [SerializeField]
         private float _distance = 0.8f;
         private Animator _animator;
@@ -64,10 +65,20 @@ namespace Player.Animation
                 case CutsceneManager.Cutscenes.ReadyGame:
                     PlayReadyGameCutscene();
                     break;
+                case CutsceneManager.Cutscenes.Win:
+                    PlayWinCutscene(location);
+                    break;
                     
             }
         }
 
+        void PlayWinCutscene(Transform pos)
+        {
+            transform.position = pos.position;
+            transform.rotation = pos.rotation;
+            _animator.SetTrigger(WinTrigger);
+
+        }
         private void OnDisable()
         {
             CutsceneManager.OnPlayCutscene -= OnPlayCutscene;

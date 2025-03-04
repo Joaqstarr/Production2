@@ -8,7 +8,8 @@ namespace World
         {
             StartGame,
             ReadyGame,
-            Caught
+            Caught,
+            Win
         }
         public static bool IsInCutscene { get; private set; } = false;
         public delegate void PlayCutsceneDel(Cutscenes cutscene, Transform location);

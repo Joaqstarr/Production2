@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using World;
 
 namespace AI.Robot.Animation
 {
@@ -14,6 +15,8 @@ namespace AI.Robot.Animation
             _animator = GetComponent<Animator>();
             _agent = GetComponent<NavMeshAgent>();
         }
+
+
 
 
         private void Update()

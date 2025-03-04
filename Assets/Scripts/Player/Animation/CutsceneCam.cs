@@ -14,6 +14,7 @@ namespace Player.Animation
         
         private static readonly int StartTrigger = Animator.StringToHash("TriggerStartScreen");
         private static readonly int OnStartTrigger = Animator.StringToHash("OnStartGame");
+        private static readonly int OnWinTrigger = Animator.StringToHash("Win");
 
         
         private Animator _animator;
@@ -41,6 +42,9 @@ namespace Player.Animation
             {
                 case CutsceneManager.Cutscenes.Caught:
                     PlayCutsceneAtLocation(location, Caught);
+                    break;
+                case CutsceneManager.Cutscenes.Win:
+                    PlayCutsceneAtLocation(location, OnWinTrigger);
                     break;
                 case CutsceneManager.Cutscenes.StartGame:
 
