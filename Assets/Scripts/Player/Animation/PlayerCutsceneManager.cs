@@ -74,6 +74,7 @@ namespace Player.Animation
 
         void PlayWinCutscene(Transform pos)
         {
+            _characterController.enabled = false;
             transform.position = pos.position;
             transform.rotation = pos.rotation;
             _animator.SetTrigger(WinTrigger);
@@ -94,7 +95,6 @@ namespace Player.Animation
         }
         private void PlayStartCutscene(Transform root)
         {
-
             transform.position = root.position;
             transform.rotation = root.rotation;
             
