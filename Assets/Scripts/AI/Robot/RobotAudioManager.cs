@@ -15,6 +15,8 @@ public class RobotAudioManager : MonoBehaviour
     public AudioClip robotJump;
     public AudioClip robotLand;
 
+    public ParticleSystem dustImpact;
+
     private AudioSource audioSource;
 
     private void Start()
@@ -64,6 +66,7 @@ public class RobotAudioManager : MonoBehaviour
             audioSource.PlayOneShot(clip);
         }
         audioSource.PlayOneShot(crushMouse);
+        dustImpact.Play();
     }
 
     public void OnJumpStart()
@@ -73,5 +76,6 @@ public class RobotAudioManager : MonoBehaviour
     public void OnLand()
     {
         audioSource.PlayOneShot(robotLand);
+        dustImpact.Play();
     }
 }
