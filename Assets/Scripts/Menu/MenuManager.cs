@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using World;
+using Player.Animation;
 
 public class MenuManager : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class MenuManager : MonoBehaviour
     public SubMenu _pauseScreenSubmenu;
     public SubMenu _settingsMenuSubmenu;
     public SubMenu _titleScreenMenu;
-    
+    public SubMenu _winScreenMenu;
+
     public delegate void MenuDelegate();
     public static MenuDelegate OnGameStart;
     
@@ -77,11 +79,12 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         MenuInput.OnTogglePause += OnTogglePause;
+        PlayerCutsceneManager.OnFinishWinAnimation += TriggerWinScreen;
     }
 
     private void OnTogglePause()
     {
-        if (_titleScreenMenu.IsOpen()) return;
+        if (_titleScreenMenu.IsOpen() || _winScreenMenu.IsOpen()) return;
         
         if (isPaused)
         {
@@ -96,10 +99,11 @@ public class MenuManager : MonoBehaviour
     private void OnDisable()
     {
         MenuInput.OnTogglePause -= OnTogglePause;
+        PlayerCutsceneManager.OnFinishWinAnimation -= TriggerWinScreen;
 
     }
 
-    
+
     #region Pause/Unpause Functions
 
     public void Pause()
@@ -176,8 +180,29 @@ public class MenuManager : MonoBehaviour
 
     public void OnRestartPressed()
     {
+        StartCoroutine(ReloadScene());
+    }
+    IEnumerator ReloadScene()
+    {
+
+        if (Fader.Instance)
+        {
+            Fader.Instance.CutToBlack();
+        }
+        Time.timeScale = 0;
+
+        yield return new WaitForSecondsRealtime(0.5f);
         Time.timeScale = 1f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void TriggerWinScreen()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        DisableCanvasGroup(_menuCanvasGroup);
+        _titleScreenMenu.CloseMenu();
+        _winScreenMenu.OpenMenu();
     }
 }
 

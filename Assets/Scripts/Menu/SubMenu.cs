@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +11,7 @@ namespace Menu
         
         private CanvasGroup _menuCanvasGroup;
         [SerializeField] private Selectable _firstSelectedObject;
+        [SerializeField] private float _fadeTime = 0;
         private void Awake()
         {
             _menuCanvasGroup = GetComponent<CanvasGroup>();
@@ -18,16 +20,39 @@ namespace Menu
         public void OpenMenu()
         {
             EventSystem.current.SetSelectedGameObject(_firstSelectedObject.gameObject);
-            _menuCanvasGroup.alpha = 1;
-            _menuCanvasGroup.blocksRaycasts = true;
-            _menuCanvasGroup.interactable = true;
+            if(_fadeTime <= 0)
+            {
+                _menuCanvasGroup.alpha = 1;
+                _menuCanvasGroup.blocksRaycasts = true;
+                _menuCanvasGroup.interactable = true;
+                return;
+            }
+
+            _menuCanvasGroup.DOFade(1, _fadeTime).onComplete += () =>
+            {
+                _menuCanvasGroup.blocksRaycasts = true;
+                _menuCanvasGroup.interactable = true;
+
+            };
+
         }
         
         public void CloseMenu()
         {
-            _menuCanvasGroup.alpha = 0;
-            _menuCanvasGroup.blocksRaycasts = false;
-            _menuCanvasGroup.interactable = false;
+            if (_fadeTime <= 0)
+            {
+                _menuCanvasGroup.alpha = 0;
+                _menuCanvasGroup.blocksRaycasts = false;
+                _menuCanvasGroup.interactable = false;
+                return;
+            }
+
+            _menuCanvasGroup.DOFade(0, _fadeTime).onComplete += () =>
+            {
+                _menuCanvasGroup.blocksRaycasts = false;
+                _menuCanvasGroup.interactable = false;
+
+            };
         }
 
         public bool IsOpen()

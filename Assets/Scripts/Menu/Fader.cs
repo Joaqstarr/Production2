@@ -23,6 +23,7 @@ namespace Menu
             _canvasGroup.alpha = 1;
             _canvasGroup.DOFade(0, 0.5f);
         }
+
         
         public void CutToBlack()
         {

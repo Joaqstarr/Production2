@@ -15,7 +15,7 @@ namespace Player.Animation
         private static readonly int StartTrigger = Animator.StringToHash("TriggerStartScreen");
         private static readonly int OnStartTrigger = Animator.StringToHash("OnStartGame");
         private static readonly int OnWinTrigger = Animator.StringToHash("Win");
-
+        
         
         private Animator _animator;
 
@@ -32,6 +32,8 @@ namespace Player.Animation
 
         private void OnEndCutscene(CutsceneManager.Cutscenes cutscene)
         {
+            //dont reset camera if win animation
+            if (cutscene == CutsceneManager.Cutscenes.Win) return;
             _virtualCamera.Priority = -1;
         }
 

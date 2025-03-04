@@ -64,9 +64,11 @@ namespace AI.Robot.Animation
             }
 
             yield return new WaitForSeconds(2f);
-            
+
+            Time.timeScale = 1f;
+
             CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Caught);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

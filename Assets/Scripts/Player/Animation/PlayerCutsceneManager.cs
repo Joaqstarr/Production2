@@ -19,7 +19,8 @@ namespace Player.Animation
         public delegate void CutsceneEventDelegate();
 
         public static CutsceneEventDelegate OnOpenElectricalBox;
-        
+        public static CutsceneEventDelegate OnFinishWinAnimation;
+
         [SerializeField]
         private float _distance = 0.8f;
         private Animator _animator;
@@ -127,6 +128,13 @@ namespace Player.Animation
         public void OpenElectrical()
         {
             OnOpenElectricalBox?.Invoke();
+        }
+
+        public void FinishWin()
+        {
+            OnFinishWinAnimation?.Invoke();
+
+            CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Win);
         }
     }
 }
