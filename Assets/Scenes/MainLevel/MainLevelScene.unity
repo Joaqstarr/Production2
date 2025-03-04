@@ -98,7 +98,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: e6f2c418a5b4fcc4db9a94cd5e1e6941,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: d6076283b3ff28744a0a3c2ba1044b06,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 4bf584f92367f6749bd15352906f191a,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4921,7 +4921,7 @@ PrefabInstance:
     - target: {fileID: 2421533134374308207, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2860267073840596302, guid: 004f54ecdb31fce478ee8d4b01d6c69d,
         type: 3}
