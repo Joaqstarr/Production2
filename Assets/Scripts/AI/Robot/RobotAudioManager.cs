@@ -11,6 +11,8 @@ public class RobotAudioManager : MonoBehaviour
     public AudioClip[] footstepSounds;
     public AudioClip[] crunchSounds;
     public AudioClip crushMouse;
+    public AudioClip robotJump;
+    public AudioClip robotLand;
 
     private AudioSource audioSource;
 
@@ -58,5 +60,14 @@ public class RobotAudioManager : MonoBehaviour
     public void OnStompHit()
     {
         audioSource.PlayOneShot(crushMouse);
+    }
+
+    public void OnJumpStart()
+    {
+        audioSource.PlayOneShot(robotJump);
+    }
+    public void OnLand()
+    {
+        audioSource.PlayOneShot(robotLand);
     }
 }

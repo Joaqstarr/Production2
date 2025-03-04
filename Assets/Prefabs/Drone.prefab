@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 5778029950189064461}
   - component: {fileID: 1961443674822077312}
   - component: {fileID: 7046760236488406036}
-  - component: {fileID: -8722172743700292560}
+  - component: {fileID: 5930106759575748372}
   - component: {fileID: 3532075121781592626}
   m_Layer: 6
   m_Name: Drone
@@ -645,7 +645,7 @@ MonoBehaviour:
   droneRotation: 15
   <_lookRadius>k__BackingField: 5
   <_lookTransform>k__BackingField: {fileID: 983433977578481390}
---- !u!114 &-8722172743700292560
+--- !u!114 &5930106759575748372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,14 +654,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6130120069349861783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c88d02c0894644ea467f21b789efcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff5374b36aaeed488f0090de8b3bd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idleSounds:
   - {fileID: 8300000, guid: 6c5378a8c4170e4498ef9786dfc1ad01, type: 3}
-  footstepSounds: []
-  laserClick: {fileID: 0}
-  landSound: {fileID: 0}
+  alertSounds: []
 --- !u!82 &3532075121781592626
 AudioSource:
   m_ObjectHideFlags: 0

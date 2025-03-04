@@ -8,6 +8,7 @@ public class MouseAudioManager : MonoBehaviour
 {    
     public AudioClip rollingSound;
     public AudioClip alertSound;
+    public AudioClip spawnSound;
 
     private NavMeshAgent agent;
     private AudioSource audioSource;
@@ -70,4 +71,9 @@ public class MouseAudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
+
+    //void OnEnable()
+    //{
+    //    audioSource.PlayOneShot(spawnSound);
+    //}
 }

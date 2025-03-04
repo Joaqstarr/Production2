@@ -720,6 +720,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bd5b3649a3142fb4f84d739672d81c44, type: 3}
   - {fileID: 8300000, guid: 25c8b4ade37ada248a937eca5d9bc616, type: 3}
   crushMouse: {fileID: 8300000, guid: e40db94fbfc4af94796e71fd63e00f6c, type: 3}
+  robotJump: {fileID: 8300000, guid: 1699d1425e550c040b12e4851838e476, type: 3}
+  robotLand: {fileID: 8300000, guid: 300002b8c5b66f24ea0ad1b892bcb56f, type: 3}
 --- !u!82 &1515693553862007224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -733,7 +735,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.696
   m_Pitch: 0.68
   Loop: 0
   Mute: 0
