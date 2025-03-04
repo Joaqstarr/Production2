@@ -116,9 +116,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac01b179c8fe8064783bffca755928af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollingSound: {fileID: 8300000, guid: df3c61b2204c6a749a029c8ed20374c7, type: 3}
-  alertSound: {fileID: 8300000, guid: 81fd09c0763984b4a876229754b01a77, type: 3}
-  spawnSound: {fileID: 8300000, guid: 81fd09c0763984b4a876229754b01a77, type: 3}
+  idleSounds:
+  - {fileID: 8300000, guid: b1dcbe63d59537f4bb9c708deb3a94d3, type: 3}
+  - {fileID: 8300000, guid: 959fd252232c0b541806c58757c49c7c, type: 3}
+  - {fileID: 8300000, guid: 152baefb0a95a6e4488538b76fdead0a, type: 3}
+  - {fileID: 8300000, guid: 6867c99599ac10e4c926de84a2105aff, type: 3}
+  - {fileID: 8300000, guid: 649b223f59fb2944a8b21d73988c9b16, type: 3}
+  - {fileID: 8300000, guid: e75c07ea416c6b44ebf108c719086801, type: 3}
+  - {fileID: 8300000, guid: 18e180f476883744181ca8f67b76268e, type: 3}
+  - {fileID: 8300000, guid: 3dfa2d9690a6db14cb20b9232ce5fe8e, type: 3}
+  - {fileID: 8300000, guid: 2fd5addcb15b17740b40f6dd7afde000, type: 3}
+  rollingSound: {fileID: 8300000, guid: 86b03d10b31e23f49b35fc4d2942a37e, type: 3}
+  alertSound: {fileID: 8300000, guid: 03bf83341aa261a42a4a652f8800c74d, type: 3}
 --- !u!82 &6015019567282018700
 AudioSource:
   m_ObjectHideFlags: 0

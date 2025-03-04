@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class MouseAudioManager : MonoBehaviour
-{    
+{
+    public AudioClip[] idleSounds;
     public AudioClip rollingSound;
     public AudioClip alertSound;
-    public AudioClip spawnSound;
 
     private NavMeshAgent agent;
     private AudioSource audioSource;
@@ -58,6 +58,29 @@ public class MouseAudioManager : MonoBehaviour
         }
     }
 
+    IEnumerator PlayIdleLoop()
+    {
+        float minDelay = 2f;
+        float maxDelay = 4.5f;
+
+        while (true)
+        {
+            if (idleSounds.Length > 0)
+            {
+                AudioClip randomClip = idleSounds[UnityEngine.Random.Range(0, idleSounds.Length)];
+                audioSource.PlayOneShot(randomClip);
+
+                // Wait for a random time before playing the next sound
+                float randomDelay = UnityEngine.Random.Range(minDelay, maxDelay);
+                yield return new WaitForSeconds(randomDelay);
+            }
+            else
+            {
+                yield return null; // Prevent infinite loop errors if no sounds exist
+            }
+        }
+    }
+
     private void PlayMovementSound()
     {
         if (!audioSource.isPlaying) 
@@ -71,9 +94,4 @@ public class MouseAudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
-
-    //void OnEnable()
-    //{
-    //    audioSource.PlayOneShot(spawnSound);
-    //}
 }

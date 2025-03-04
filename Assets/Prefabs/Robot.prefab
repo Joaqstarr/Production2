@@ -716,8 +716,13 @@ MonoBehaviour:
   footstepSounds:
   - {fileID: 8300000, guid: de36105a5e59ab1479082e120cc33dd7, type: 3}
   - {fileID: 8300000, guid: 6b70fcdd2459b3949aa780f81c07d09b, type: 3}
-  crunchSounds: {fileID: 8300000, guid: d9340bba8be005e4eb2240686bfe6a92, type: 3}
+  mouseDieSounds:
+  - {fileID: 8300000, guid: 1cbb662ab5ac96b46a998f16fe25d2e4, type: 3}
+  - {fileID: 8300000, guid: f84e38e608aabc44a8749b2cc9f84881, type: 3}
+  - {fileID: 8300000, guid: 5f7c2a00e21ae1349bc9bb99d03b3242, type: 3}
+  - {fileID: 8300000, guid: cd23dbbeac3726c43955ca75271b4d89, type: 3}
   crushMouse: {fileID: 8300000, guid: e40db94fbfc4af94796e71fd63e00f6c, type: 3}
+  crunchSounds: {fileID: 8300000, guid: d9340bba8be005e4eb2240686bfe6a92, type: 3}
   robotJump: {fileID: 8300000, guid: 1699d1425e550c040b12e4851838e476, type: 3}
   robotLand: {fileID: 8300000, guid: 300002b8c5b66f24ea0ad1b892bcb56f, type: 3}
 --- !u!82 &1515693553862007224

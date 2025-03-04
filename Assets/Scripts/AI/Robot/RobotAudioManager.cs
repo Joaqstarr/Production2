@@ -9,8 +9,9 @@ public class RobotAudioManager : MonoBehaviour
 
     public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
-    public AudioClip crunchSounds;
+    public AudioClip[] mouseDieSounds;
     public AudioClip crushMouse;
+    public AudioClip crunchSounds;    
     public AudioClip robotJump;
     public AudioClip robotLand;
 
@@ -46,13 +47,22 @@ public class RobotAudioManager : MonoBehaviour
         OnFootstep?.Invoke();
     }
 
+    public void OnCatchStart()
+    {
+        audioSource.PlayOneShot(robotJump);
+    }
     public void PlayCrunch()
     {
-            audioSource.PlayOneShot(crunchSounds);
+        audioSource.PlayOneShot(crunchSounds);
     }
 
     public void OnStompHit()
     {
+        if (mouseDieSounds.Length > 0)
+        {
+            AudioClip clip = mouseDieSounds[UnityEngine.Random.Range(0, mouseDieSounds.Length)];
+            audioSource.PlayOneShot(clip);
+        }
         audioSource.PlayOneShot(crushMouse);
     }
 
