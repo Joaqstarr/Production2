@@ -945,6 +945,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinCutsceneRobot
       objectReference: {fileID: 0}
+    - target: {fileID: 1391437011220739151, guid: a5617585ad1c9254c8e118e8b53611bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1730701921977954037, guid: a5617585ad1c9254c8e118e8b53611bf,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1008,6 +1013,11 @@ PrefabInstance:
     - target: {fileID: 1730701921977954037, guid: a5617585ad1c9254c8e118e8b53611bf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119366424372741164, guid: a5617585ad1c9254c8e118e8b53611bf,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5684841179739927695, guid: a5617585ad1c9254c8e118e8b53611bf,
