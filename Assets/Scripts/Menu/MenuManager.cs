@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using World;
 
 public class MenuManager : MonoBehaviour
 {
@@ -27,7 +28,21 @@ public class MenuManager : MonoBehaviour
 
         _pauseScreenSubmenu.CloseMenu();
         _settingsMenuSubmenu.CloseMenu();
-        OpenTitleScreen();
+        
+    }
+
+    private void Awake()
+    {
+        CutsceneManager.OnPlayCutscene += OnPlayCutscene;
+
+    }
+
+    private void OnPlayCutscene(CutsceneManager.Cutscenes cutscene, Transform location)
+    {
+        if(cutscene == CutsceneManager.Cutscenes.StartGame)
+        {
+            OpenTitleScreen();
+        }
     }
 
     public void OpenTitleScreen()
