@@ -11,12 +11,16 @@ public class PlayerInteractable : MonoBehaviour
     public UnityEvent OnInteract;
     [SerializeField] protected string _uiInRangeText;
 
+    PlayerControls playerControls;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             InteractableText = _uiInRangeText;
-            other.GetComponent<PlayerControls>().InteractPressed += Interact;
+            playerControls = other.GetComponent<PlayerControls>();
+            playerControls.InteractPressed = null;
+
+            playerControls.InteractPressed += Interact;
             
         }
     }
@@ -29,18 +33,34 @@ public class PlayerInteractable : MonoBehaviour
             {
                 InteractableText = "";
             }
-            other.GetComponent<PlayerControls>().InteractPressed -= Interact;
+
+
+            UnsubscribeFromInput();
+
         }
     }
     
     
     void Interact()
     {
+        UnsubscribeFromInput();
+
         if (gameObject)
         {
             OnInteract.Invoke();
             PlayerInteractedWith();
+
+
         }
+    }
+
+    private void UnsubscribeFromInput()
+    {
+        if (playerControls)
+        {
+            playerControls.InteractPressed -= Interact;
+        }
+        playerControls = null;
     }
 
     virtual protected void PlayerInteractedWith()

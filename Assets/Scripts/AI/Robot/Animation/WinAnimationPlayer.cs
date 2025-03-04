@@ -12,7 +12,18 @@ namespace AI.Robot.Animation
         {
             _animator.gameObject.SetActive(false);
             
+        }
+
+        private void OnEnable()
+        {
             CutsceneManager.OnPlayCutscene += OnPlayCutscene;
+
+        }
+
+        private void OnDisable()
+        {
+            CutsceneManager.OnPlayCutscene -= OnPlayCutscene;
+
         }
 
         private void OnPlayCutscene(CutsceneManager.Cutscenes cutscene, Transform location)

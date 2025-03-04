@@ -16,6 +16,11 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField]
+    private AudioClip[] piperPunchSounds;
+    [SerializeField]
+    private AudioClip[] piperGruntSounds;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -63,5 +68,25 @@ public class AudioManager : MonoBehaviour
     public void IntroLand()
     {
         audioSource.PlayOneShot(landSound);
+    }
+
+    public void PlayRandomPunch()
+    {
+        if (piperPunchSounds.Length > 0)
+        {
+            int index = UnityEngine.Random.Range(0, piperPunchSounds.Length);
+
+            audioSource.PlayOneShot(piperPunchSounds[index]);
+        }
+    }
+
+    public void PlayRandomGrunt()
+    {
+        if (piperPunchSounds.Length > 0)
+        {
+            int index = UnityEngine.Random.Range(0, piperGruntSounds.Length);
+
+            audioSource.PlayOneShot(piperPunchSounds[index]);
+        }
     }
 }

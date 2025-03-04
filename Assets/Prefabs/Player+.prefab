@@ -1101,6 +1101,15 @@ MonoBehaviour:
   landSound: {fileID: 8300000, guid: 54c7a9052564b88408327b3d49db7a56, type: 3}
   piperScream: {fileID: 8300000, guid: 50e023fc9a53e334baaffa557a21e78e, type: 3}
   laserClick: {fileID: 8300000, guid: facc7011466598742a9415275ad5d557, type: 3}
+  piperPunchSounds:
+  - {fileID: 8300000, guid: 835dc648eb889e84aa0d5488f2089303, type: 3}
+  - {fileID: 8300000, guid: 1098379c3cb10f24f86e9845b9f18021, type: 3}
+  - {fileID: 8300000, guid: 07895697bd66f044a929e3ea24837893, type: 3}
+  piperGruntSounds:
+  - {fileID: 8300000, guid: fd5f1cde3a7b3da4d83873552ecfda54, type: 3}
+  - {fileID: 8300000, guid: 8abb095cbbb6349429f0a8143a6d6923, type: 3}
+  - {fileID: 8300000, guid: 47f5b9a5752b74c4d950ec2fba0345b0, type: 3}
+  - {fileID: 8300000, guid: eb116c2c7973fa44b80c7b9173df0232, type: 3}
 --- !u!82 &3216743092235445643
 AudioSource:
   m_ObjectHideFlags: 0
