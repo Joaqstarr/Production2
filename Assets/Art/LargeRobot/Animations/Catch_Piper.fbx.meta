@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.57303315
+      - time: 0.5982697
         functionName: PlayCrunch
         data: 
         objectReferenceParameter: {instanceID: 0}

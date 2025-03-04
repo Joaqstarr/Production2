@@ -716,9 +716,7 @@ MonoBehaviour:
   footstepSounds:
   - {fileID: 8300000, guid: de36105a5e59ab1479082e120cc33dd7, type: 3}
   - {fileID: 8300000, guid: 6b70fcdd2459b3949aa780f81c07d09b, type: 3}
-  crunchSounds:
-  - {fileID: 8300000, guid: bd5b3649a3142fb4f84d739672d81c44, type: 3}
-  - {fileID: 8300000, guid: 25c8b4ade37ada248a937eca5d9bc616, type: 3}
+  crunchSounds: {fileID: 8300000, guid: d9340bba8be005e4eb2240686bfe6a92, type: 3}
   crushMouse: {fileID: 8300000, guid: e40db94fbfc4af94796e71fd63e00f6c, type: 3}
   robotJump: {fileID: 8300000, guid: 1699d1425e550c040b12e4851838e476, type: 3}
   robotLand: {fileID: 8300000, guid: 300002b8c5b66f24ea0ad1b892bcb56f, type: 3}

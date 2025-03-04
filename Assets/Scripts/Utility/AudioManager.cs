@@ -9,8 +9,10 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
-    public AudioClip laserClick;
+    public AudioClip piperJump;    
     public AudioClip landSound;
+    public AudioClip piperScream;
+    public AudioClip laserClick;
 
     private AudioSource audioSource;
 
@@ -42,6 +44,16 @@ public class AudioManager : MonoBehaviour
         }
 
         OnFootstep?.Invoke();
+    }
+
+    public void OnPiperJump()
+    {
+        audioSource.PlayOneShot(piperJump);
+    }
+
+    public void OnPickedUp()
+    {
+        audioSource.PlayOneShot(piperScream);
     }
 
     public void LaserClick()

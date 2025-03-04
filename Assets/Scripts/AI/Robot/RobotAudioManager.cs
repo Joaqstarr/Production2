@@ -9,7 +9,7 @@ public class RobotAudioManager : MonoBehaviour
 
     public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
-    public AudioClip[] crunchSounds;
+    public AudioClip crunchSounds;
     public AudioClip crushMouse;
     public AudioClip robotJump;
     public AudioClip robotLand;
@@ -48,13 +48,7 @@ public class RobotAudioManager : MonoBehaviour
 
     public void PlayCrunch()
     {
-
-            AudioClip clip1 = crunchSounds[0];
-            AudioClip clip2 = crunchSounds[1];
-
-            audioSource.PlayOneShot(clip1);
-            audioSource.PlayOneShot(clip2);
-        
+            audioSource.PlayOneShot(crunchSounds);
     }
 
     public void OnStompHit()
