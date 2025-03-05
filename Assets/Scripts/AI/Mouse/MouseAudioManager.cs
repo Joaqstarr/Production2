@@ -16,7 +16,7 @@ public class MouseAudioManager : MonoBehaviour
     private bool _hasMoved = false;
     private GenericDistanceListener _laserListener;
 
-    private float cooldown = 2.0f; 
+    private float cooldown = 6.0f; 
     private float lastAlert = 0f;
 
     private void Start()
