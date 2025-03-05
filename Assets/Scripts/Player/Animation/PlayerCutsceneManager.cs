@@ -126,7 +126,7 @@ namespace Player.Animation
             CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.ReadyGame);
         }
 
-        public void OpenElectrical()
+        public void OnOpenElectrical()
         {
             OnOpenElectricalBox?.Invoke();
         }
