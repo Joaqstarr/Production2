@@ -134,7 +134,6 @@ namespace Player.Animation
         {
             OnFinishWinAnimation?.Invoke();
 
-            CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Win);
         }
     }
 }

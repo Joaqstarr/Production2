@@ -192,6 +192,8 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0;
 
         yield return new WaitForSecondsRealtime(0.5f);
+        CutsceneManager.EndCutscene(CutsceneManager.Cutscenes.Win);
+
         Time.timeScale = 1f;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
