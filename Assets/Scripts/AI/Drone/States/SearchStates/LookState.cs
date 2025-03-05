@@ -23,6 +23,8 @@ namespace AI.Drone.States.SearchStates
                 _drone.Agent.SetDestination(_drone.transform.position);
                 
                 _drone.Agent.speed = 3;
+
+                _drone.DroneLight.color = _drone.lookStateColor;
             }
 
         }
@@ -50,6 +52,7 @@ namespace AI.Drone.States.SearchStates
             base.OnExitState();
             _drone.Agent.speed = _previousAgentSpeed;
 
+            _drone.DroneLight.color = _drone.OrigColor;
         }
     }
 }

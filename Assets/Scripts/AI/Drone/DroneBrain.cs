@@ -32,9 +32,17 @@ namespace AI.Drone
         [field:SerializeField]
         public Transform _lookTransform { get; private set; }
 
+        public Light DroneLight { get; private set; }
+        public Color OrigColor { get; private set; }
+
+        [field: SerializeField] public Color lookStateColor { get; private set; } = Color.red;
+
         private void Awake()
         {
             Agent = GetComponent<NavMeshAgent>();
+            DroneLight = GetComponentInChildren<Light>();
+            OrigColor = DroneLight.color;
+
             _droneStateMachine = new DroneStateMachineManager(this);
         }
 
