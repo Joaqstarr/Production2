@@ -35,7 +35,6 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        CutsceneManager.OnPlayCutscene += OnPlayCutscene;
 
     }
 
@@ -78,6 +77,8 @@ public class MenuManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        CutsceneManager.OnPlayCutscene += OnPlayCutscene;
+
         MenuInput.OnTogglePause += OnTogglePause;
         PlayerCutsceneManager.OnFinishWinAnimation += TriggerWinScreen;
     }
@@ -98,6 +99,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnDisable()
     {
+        CutsceneManager.OnPlayCutscene -= OnPlayCutscene;
+
         MenuInput.OnTogglePause -= OnTogglePause;
         PlayerCutsceneManager.OnFinishWinAnimation -= TriggerWinScreen;
 
