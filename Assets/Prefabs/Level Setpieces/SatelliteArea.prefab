@@ -687,22 +687,22 @@ PrefabInstance:
     - target: {fileID: 4010844859290689017, guid: 0d844350fe4b24245bd37f9ebc90aab9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.539493
+      value: 8.35
       objectReference: {fileID: 0}
     - target: {fileID: 4010844859290689017, guid: 0d844350fe4b24245bd37f9ebc90aab9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.581582
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 4010844859290689017, guid: 0d844350fe4b24245bd37f9ebc90aab9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.95919067
+      value: 0.9999992
       objectReference: {fileID: 0}
     - target: {fileID: 4010844859290689017, guid: 0d844350fe4b24245bd37f9ebc90aab9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.28276005
+      value: -0.001274362
       objectReference: {fileID: 0}
     - target: {fileID: 4010844859290689017, guid: 0d844350fe4b24245bd37f9ebc90aab9,
         type: 3}
@@ -1192,8 +1192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57ebce6baef5d645be065a27274b78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSounds:
-  - {fileID: 8300000, guid: ac8026b43f7faae4d9a9401f1aa20d53, type: 3}
   footstepSounds:
   - {fileID: 8300000, guid: de36105a5e59ab1479082e120cc33dd7, type: 3}
   - {fileID: 8300000, guid: 6b70fcdd2459b3949aa780f81c07d09b, type: 3}

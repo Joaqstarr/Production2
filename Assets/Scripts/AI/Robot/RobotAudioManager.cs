@@ -7,7 +7,6 @@ public class RobotAudioManager : MonoBehaviour
 {
     public static event Action OnFootstep;
 
-    public AudioClip[] idleSounds;
     public AudioClip[] footstepSounds;
     public AudioClip[] mouseDieSounds;
     public AudioClip crushMouse;
@@ -27,16 +26,9 @@ public class RobotAudioManager : MonoBehaviour
         audioSource.playOnAwake = true;
         audioSource.volume = 0.5f;
 
-        PlayIdleLoop();
+       
     }
-    public void PlayIdleLoop()
-    {
-        if (idleSounds.Length > 0)
-        {
-            audioSource.clip = idleSounds[UnityEngine.Random.Range(0, idleSounds.Length)];
-            audioSource.Play();
-        }
-    }
+
 
     public void PlayFootstep()
     {
