@@ -1020,6 +1020,7 @@ MonoBehaviour:
   crunchSounds: {fileID: 8300000, guid: d9340bba8be005e4eb2240686bfe6a92, type: 3}
   robotJump: {fileID: 8300000, guid: 1699d1425e550c040b12e4851838e476, type: 3}
   robotLand: {fileID: 8300000, guid: 300002b8c5b66f24ea0ad1b892bcb56f, type: 3}
+  powerDownSound: {fileID: 8300000, guid: 22ff50b78107a6e4183cec39989fcd77, type: 3}
   dustImpact: {fileID: 9153029042022777626}
 --- !u!82 &1515693553862007224
 AudioSource:

@@ -13,6 +13,7 @@ public class RobotAudioManager : MonoBehaviour
     public AudioClip crunchSounds;    
     public AudioClip robotJump;
     public AudioClip robotLand;
+    public AudioClip powerDownSound;
 
     public ParticleSystem dustImpact;
 
@@ -74,5 +75,9 @@ public class RobotAudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(robotLand);
         dustImpact.Play();
+    }
+    public void OnWin()
+    {
+        audioSource.PlayOneShot(powerDownSound);
     }
 }

@@ -1097,10 +1097,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cd42ac464ba41344873f12ed577e90f, type: 3}
   - {fileID: 8300000, guid: dcbf53d14ae12e64c9f02e7b33c66c4b, type: 3}
   - {fileID: 8300000, guid: 6af503bf059f0504d880e31149f2f1d7, type: 3}
-  piperJump: {fileID: 8300000, guid: 4ce814821f9ad7648af1d9fe8fc1fc35, type: 3}
-  landSound: {fileID: 8300000, guid: 54c7a9052564b88408327b3d49db7a56, type: 3}
   piperScream: {fileID: 8300000, guid: 50e023fc9a53e334baaffa557a21e78e, type: 3}
   laserClick: {fileID: 8300000, guid: facc7011466598742a9415275ad5d557, type: 3}
+  piperJump: {fileID: 8300000, guid: 4ce814821f9ad7648af1d9fe8fc1fc35, type: 3}
+  landSound: {fileID: 8300000, guid: 54c7a9052564b88408327b3d49db7a56, type: 3}
   piperPunchSounds:
   - {fileID: 8300000, guid: 835dc648eb889e84aa0d5488f2089303, type: 3}
   - {fileID: 8300000, guid: 1098379c3cb10f24f86e9845b9f18021, type: 3}
@@ -1110,6 +1110,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8abb095cbbb6349429f0a8143a6d6923, type: 3}
   - {fileID: 8300000, guid: 47f5b9a5752b74c4d950ec2fba0345b0, type: 3}
   - {fileID: 8300000, guid: eb116c2c7973fa44b80c7b9173df0232, type: 3}
+  hitElectricalBoxSounds:
+  - {fileID: 8300000, guid: 7635af2b79e9ba34d9f33896be20808d, type: 3}
+  - {fileID: 8300000, guid: 49c615167cd9acc47bbee94a6dcba96f, type: 3}
+  openElectricalSound: {fileID: 8300000, guid: 9f4a19129445fab49a9c51ba1ba9426d, type: 3}
+  scareSound: {fileID: 8300000, guid: 6aba06ce9ea439d4a9cf13e20e69cfad, type: 3}
+  breakBoxSound: {fileID: 8300000, guid: 544bc47eb07dfc741ac5fbdfed5dd728, type: 3}
 --- !u!82 &3216743092235445643
 AudioSource:
   m_ObjectHideFlags: 0
