@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AI.Drone.States.SearchStates;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
@@ -112,6 +113,10 @@ namespace AI.Drone
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, _lookRadius);
         }
-        
+
+        private void OnEnable()
+        {
+            LookState.AmountSpotted = 0;
+        }
     }
 }

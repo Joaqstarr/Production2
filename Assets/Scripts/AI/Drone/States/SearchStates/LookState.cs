@@ -10,7 +10,7 @@ namespace AI.Drone.States.SearchStates
 
         private float _previousAgentSpeed;
 
-        public static int AmountSpotted { get; private set; } = 0;
+        public static int AmountSpotted { get;  set; } = 0;
         public LookState(DroneBrain drone, DroneStateMachineManager manager,  SearchState searchState) : base(drone, manager)
         {
             _searchState = searchState;
