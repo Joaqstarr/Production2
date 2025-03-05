@@ -57,6 +57,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0
+        functionName: OnCatchStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: d039d704291e8cc49a56f19b8e12ed6b,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.5982697
         functionName: PlayCrunch
         data: 
@@ -66,13 +81,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.7766424
         functionName: ReloadScene
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
-        functionName: OnCatchStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
