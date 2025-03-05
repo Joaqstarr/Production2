@@ -9,6 +9,8 @@ namespace AI.Drone.States.SearchStates
         private SearchState _searchState;
 
         private float _previousAgentSpeed;
+
+        public static int AmountSpotted { get; private set; } = 0;
         public LookState(DroneBrain drone, DroneStateMachineManager manager,  SearchState searchState) : base(drone, manager)
         {
             _searchState = searchState;
@@ -26,6 +28,8 @@ namespace AI.Drone.States.SearchStates
 
                 _drone.DroneLight.color = _drone.lookStateColor;
             }
+
+            AmountSpotted++;
 
         }
 
@@ -53,6 +57,8 @@ namespace AI.Drone.States.SearchStates
             _drone.Agent.speed = _previousAgentSpeed;
 
             _drone.DroneLight.color = _drone.OrigColor;
+            AmountSpotted--;
+
         }
     }
 }
