@@ -79,6 +79,7 @@ namespace Player.Animation
 
         void PlayWinCutscene(Transform pos)
         {
+            GetComponent<LaserPointer.LaserPointer>().enabled = false;
             _characterController.enabled = false;
             transform.position = pos.position;
             transform.rotation = pos.rotation;
