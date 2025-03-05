@@ -1114,7 +1114,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7635af2b79e9ba34d9f33896be20808d, type: 3}
   - {fileID: 8300000, guid: 49c615167cd9acc47bbee94a6dcba96f, type: 3}
   openElectricalSound: {fileID: 8300000, guid: 9f4a19129445fab49a9c51ba1ba9426d, type: 3}
-  scareSound: {fileID: 8300000, guid: 6aba06ce9ea439d4a9cf13e20e69cfad, type: 3}
+  scareSound: {fileID: 8300000, guid: 167cd470352242e4a91434e0aa2910b9, type: 3}
   breakBoxSound: {fileID: 8300000, guid: 544bc47eb07dfc741ac5fbdfed5dd728, type: 3}
 --- !u!82 &3216743092235445643
 AudioSource:
