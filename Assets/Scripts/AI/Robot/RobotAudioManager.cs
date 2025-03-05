@@ -58,6 +58,11 @@ public class RobotAudioManager : MonoBehaviour
         audioSource.PlayOneShot(crunchSounds);
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
     public void OnStompHit()
     {
         if (mouseDieSounds.Length > 0)
